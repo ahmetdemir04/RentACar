@@ -158,5 +158,17 @@ namespace RentACar
             }
             finally { connection.Close(); }
         }
+
+        public void SatisHesapla(Label lbl)
+        {
+            if (connection.State != ConnectionState.Open)
+            {
+                connection.Open();
+            }
+
+            SqlCommand command = new SqlCommand("SELECT SUM(tutar) FROM TblSatis", connection);
+            lbl.Text = "Toplam Tutar= " + command.ExecuteScalar().ToString() + " TL";
+            connection.Close();
+        }
     }
 }

@@ -113,6 +113,7 @@
             this.bSales.TabIndex = 5;
             this.bSales.Text = "Satışlar";
             this.bSales.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.bSales.Click += new System.EventHandler(this.bSales_Click);
             // 
             // bContract
             // 

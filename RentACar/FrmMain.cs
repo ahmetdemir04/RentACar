@@ -51,5 +51,11 @@ namespace RentACar
             FrmContract frm = new FrmContract();
             frm.ShowDialog();
         }
+
+        private void bSales_Click(object sender, EventArgs e)
+        {
+            FrmSales frm = new FrmSales();
+            frm.ShowDialog();
+        }
     }
 }

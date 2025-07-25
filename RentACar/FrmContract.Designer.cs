@@ -48,9 +48,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtTC = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.bCarDelivery = new Guna.UI2.WinForms.Guna2Button();
-            this.bContractUpdate = new Guna.UI2.WinForms.Guna2Button();
-            this.bContractAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.bTemizle = new Guna.UI2.WinForms.Guna2Button();
+            this.bCalculate = new Guna.UI2.WinForms.Guna2Button();
+            this.txtKiraSekli = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmbArac = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.txtTutar = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtGun = new Guna.UI2.WinForms.Guna2TextBox();
@@ -74,13 +75,14 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.gridCustomer = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.gridContract = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
-            this.cmbArac = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.txtKiraSekli = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.bCalculate = new Guna.UI2.WinForms.Guna2Button();
-            this.bTemizle = new Guna.UI2.WinForms.Guna2Button();
+            this.bContractAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.bContractUpdate = new Guna.UI2.WinForms.Guna2Button();
+            this.bCarDelivery = new Guna.UI2.WinForms.Guna2Button();
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.txtEkstra = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -93,7 +95,7 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridCustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridContract)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -374,58 +376,79 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "TC:";
             // 
-            // bCarDelivery
+            // bTemizle
             // 
-            this.bCarDelivery.AutoRoundedCorners = true;
-            this.bCarDelivery.BackColor = System.Drawing.Color.Transparent;
-            this.bCarDelivery.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bCarDelivery.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bCarDelivery.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bCarDelivery.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bCarDelivery.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.bCarDelivery.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCarDelivery.ForeColor = System.Drawing.Color.White;
-            this.bCarDelivery.Location = new System.Drawing.Point(358, 20);
-            this.bCarDelivery.Name = "bCarDelivery";
-            this.bCarDelivery.Size = new System.Drawing.Size(167, 24);
-            this.bCarDelivery.TabIndex = 54;
-            this.bCarDelivery.Text = "Araç Teslimi";
+            this.bTemizle.AutoRoundedCorners = true;
+            this.bTemizle.BackColor = System.Drawing.Color.Transparent;
+            this.bTemizle.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bTemizle.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bTemizle.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bTemizle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bTemizle.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.bTemizle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTemizle.ForeColor = System.Drawing.Color.White;
+            this.bTemizle.Location = new System.Drawing.Point(631, 143);
+            this.bTemizle.Name = "bTemizle";
+            this.bTemizle.Size = new System.Drawing.Size(167, 30);
+            this.bTemizle.TabIndex = 58;
+            this.bTemizle.Text = "Temizle";
+            this.bTemizle.Click += new System.EventHandler(this.bTemizle_Click);
             // 
-            // bContractUpdate
+            // bCalculate
             // 
-            this.bContractUpdate.AutoRoundedCorners = true;
-            this.bContractUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.bContractUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bContractUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bContractUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bContractUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bContractUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.bContractUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bContractUpdate.ForeColor = System.Drawing.Color.White;
-            this.bContractUpdate.Location = new System.Drawing.Point(185, 20);
-            this.bContractUpdate.Name = "bContractUpdate";
-            this.bContractUpdate.Size = new System.Drawing.Size(167, 24);
-            this.bContractUpdate.TabIndex = 53;
-            this.bContractUpdate.Text = "Sözleşme Güncelle";
-            this.bContractUpdate.Click += new System.EventHandler(this.bContractUpdate_Click);
+            this.bCalculate.AutoRoundedCorners = true;
+            this.bCalculate.BackColor = System.Drawing.Color.Transparent;
+            this.bCalculate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bCalculate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bCalculate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bCalculate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bCalculate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.bCalculate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCalculate.ForeColor = System.Drawing.Color.White;
+            this.bCalculate.Location = new System.Drawing.Point(631, 97);
+            this.bCalculate.Name = "bCalculate";
+            this.bCalculate.Size = new System.Drawing.Size(167, 35);
+            this.bCalculate.TabIndex = 57;
+            this.bCalculate.Text = "Hesapla";
+            this.bCalculate.Click += new System.EventHandler(this.bCalculate_Click);
             // 
-            // bContractAdd
+            // txtKiraSekli
             // 
-            this.bContractAdd.AutoRoundedCorners = true;
-            this.bContractAdd.BackColor = System.Drawing.Color.Transparent;
-            this.bContractAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bContractAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bContractAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bContractAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bContractAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.bContractAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bContractAdd.ForeColor = System.Drawing.Color.White;
-            this.bContractAdd.Location = new System.Drawing.Point(12, 20);
-            this.bContractAdd.Name = "bContractAdd";
-            this.bContractAdd.Size = new System.Drawing.Size(167, 24);
-            this.bContractAdd.TabIndex = 52;
-            this.bContractAdd.Text = "Sözleşme Ekle";
-            this.bContractAdd.Click += new System.EventHandler(this.bContractAdd_Click);
+            this.txtKiraSekli.AutoRoundedCorners = true;
+            this.txtKiraSekli.BackColor = System.Drawing.Color.Transparent;
+            this.txtKiraSekli.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.txtKiraSekli.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtKiraSekli.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtKiraSekli.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtKiraSekli.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtKiraSekli.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.txtKiraSekli.ItemHeight = 18;
+            this.txtKiraSekli.Items.AddRange(new object[] {
+            "Günlük",
+            "Haftalık",
+            "Aylık"});
+            this.txtKiraSekli.Location = new System.Drawing.Point(424, 71);
+            this.txtKiraSekli.Name = "txtKiraSekli";
+            this.txtKiraSekli.Size = new System.Drawing.Size(165, 24);
+            this.txtKiraSekli.TabIndex = 56;
+            this.txtKiraSekli.SelectedIndexChanged += new System.EventHandler(this.txtKiraSekli_SelectedIndexChanged);
+            // 
+            // cmbArac
+            // 
+            this.cmbArac.AutoRoundedCorners = true;
+            this.cmbArac.BackColor = System.Drawing.Color.Transparent;
+            this.cmbArac.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbArac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbArac.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbArac.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbArac.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbArac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbArac.ItemHeight = 18;
+            this.cmbArac.Location = new System.Drawing.Point(108, 78);
+            this.cmbArac.Name = "cmbArac";
+            this.cmbArac.Size = new System.Drawing.Size(165, 24);
+            this.cmbArac.TabIndex = 55;
+            this.cmbArac.SelectedIndexChanged += new System.EventHandler(this.cmbArac_SelectedIndexChanged);
             // 
             // guna2Separator1
             // 
@@ -745,10 +768,12 @@
             // 
             // splitContainer3.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.gridCustomer);
+            this.splitContainer3.Panel1.Controls.Add(this.gridContract);
             // 
             // splitContainer3.Panel2
             // 
+            this.splitContainer3.Panel2.Controls.Add(this.txtEkstra);
+            this.splitContainer3.Panel2.Controls.Add(this.label8);
             this.splitContainer3.Panel2.Controls.Add(this.guna2Separator3);
             this.splitContainer3.Panel2.Controls.Add(this.bContractAdd);
             this.splitContainer3.Panel2.Controls.Add(this.bContractUpdate);
@@ -757,13 +782,13 @@
             this.splitContainer3.SplitterDistance = 283;
             this.splitContainer3.TabIndex = 0;
             // 
-            // gridCustomer
+            // gridContract
             // 
-            this.gridCustomer.AllowUserToAddRows = false;
-            this.gridCustomer.AllowUserToDeleteRows = false;
+            this.gridContract.AllowUserToAddRows = false;
+            this.gridContract.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));
-            this.gridCustomer.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridCustomer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.gridContract.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridContract.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -771,9 +796,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.gridCustomer.ColumnHeadersHeight = 20;
-            this.gridCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.gridContract.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gridContract.ColumnHeadersHeight = 20;
+            this.gridContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -781,38 +806,39 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(117)))), ((int)(((byte)(119)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridCustomer.DefaultCellStyle = dataGridViewCellStyle3;
-            this.gridCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridCustomer.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.gridCustomer.Location = new System.Drawing.Point(0, 0);
-            this.gridCustomer.Name = "gridCustomer";
-            this.gridCustomer.ReadOnly = true;
-            this.gridCustomer.RowHeadersVisible = false;
-            this.gridCustomer.Size = new System.Drawing.Size(1202, 283);
-            this.gridCustomer.TabIndex = 1;
-            this.gridCustomer.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
-            this.gridCustomer.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));
-            this.gridCustomer.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.gridCustomer.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.gridCustomer.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.gridCustomer.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.gridCustomer.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.gridCustomer.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.gridCustomer.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.gridCustomer.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.gridCustomer.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridCustomer.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.gridCustomer.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.gridCustomer.ThemeStyle.HeaderStyle.Height = 20;
-            this.gridCustomer.ThemeStyle.ReadOnly = true;
-            this.gridCustomer.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.gridCustomer.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.gridCustomer.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridCustomer.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.White;
-            this.gridCustomer.ThemeStyle.RowsStyle.Height = 22;
-            this.gridCustomer.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(117)))), ((int)(((byte)(119)))));
-            this.gridCustomer.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.gridCustomer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCustomer_CellDoubleClick);
+            this.gridContract.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gridContract.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridContract.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
+            this.gridContract.Location = new System.Drawing.Point(0, 0);
+            this.gridContract.Name = "gridContract";
+            this.gridContract.ReadOnly = true;
+            this.gridContract.RowHeadersVisible = false;
+            this.gridContract.Size = new System.Drawing.Size(1202, 283);
+            this.gridContract.TabIndex = 1;
+            this.gridContract.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
+            this.gridContract.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));
+            this.gridContract.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.gridContract.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.gridContract.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.gridContract.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.gridContract.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.gridContract.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
+            this.gridContract.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
+            this.gridContract.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gridContract.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridContract.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.gridContract.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.gridContract.ThemeStyle.HeaderStyle.Height = 20;
+            this.gridContract.ThemeStyle.ReadOnly = true;
+            this.gridContract.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            this.gridContract.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.gridContract.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridContract.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.White;
+            this.gridContract.ThemeStyle.RowsStyle.Height = 22;
+            this.gridContract.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(117)))), ((int)(((byte)(119)))));
+            this.gridContract.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.gridContract.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCustomer_CellClick);
+            this.gridContract.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCustomer_CellDoubleClick);
             // 
             // guna2Separator3
             // 
@@ -822,79 +848,59 @@
             this.guna2Separator3.Size = new System.Drawing.Size(1196, 10);
             this.guna2Separator3.TabIndex = 0;
             // 
-            // cmbArac
+            // bContractAdd
             // 
-            this.cmbArac.AutoRoundedCorners = true;
-            this.cmbArac.BackColor = System.Drawing.Color.Transparent;
-            this.cmbArac.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbArac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbArac.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbArac.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbArac.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbArac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbArac.ItemHeight = 18;
-            this.cmbArac.Location = new System.Drawing.Point(108, 78);
-            this.cmbArac.Name = "cmbArac";
-            this.cmbArac.Size = new System.Drawing.Size(165, 24);
-            this.cmbArac.TabIndex = 55;
-            this.cmbArac.SelectedIndexChanged += new System.EventHandler(this.cmbArac_SelectedIndexChanged);
+            this.bContractAdd.AutoRoundedCorners = true;
+            this.bContractAdd.BackColor = System.Drawing.Color.Transparent;
+            this.bContractAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bContractAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bContractAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bContractAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bContractAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.bContractAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bContractAdd.ForeColor = System.Drawing.Color.White;
+            this.bContractAdd.Location = new System.Drawing.Point(12, 20);
+            this.bContractAdd.Name = "bContractAdd";
+            this.bContractAdd.Size = new System.Drawing.Size(167, 24);
+            this.bContractAdd.TabIndex = 52;
+            this.bContractAdd.Text = "Sözleşme Ekle";
+            this.bContractAdd.Click += new System.EventHandler(this.bContractAdd_Click);
             // 
-            // txtKiraSekli
+            // bContractUpdate
             // 
-            this.txtKiraSekli.AutoRoundedCorners = true;
-            this.txtKiraSekli.BackColor = System.Drawing.Color.Transparent;
-            this.txtKiraSekli.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtKiraSekli.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtKiraSekli.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtKiraSekli.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtKiraSekli.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtKiraSekli.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.txtKiraSekli.ItemHeight = 18;
-            this.txtKiraSekli.Items.AddRange(new object[] {
-            "Günlük",
-            "Haftalık",
-            "Aylık"});
-            this.txtKiraSekli.Location = new System.Drawing.Point(424, 71);
-            this.txtKiraSekli.Name = "txtKiraSekli";
-            this.txtKiraSekli.Size = new System.Drawing.Size(165, 24);
-            this.txtKiraSekli.TabIndex = 56;
-            this.txtKiraSekli.SelectedIndexChanged += new System.EventHandler(this.txtKiraSekli_SelectedIndexChanged);
+            this.bContractUpdate.AutoRoundedCorners = true;
+            this.bContractUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.bContractUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bContractUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bContractUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bContractUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bContractUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.bContractUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bContractUpdate.ForeColor = System.Drawing.Color.White;
+            this.bContractUpdate.Location = new System.Drawing.Point(185, 20);
+            this.bContractUpdate.Name = "bContractUpdate";
+            this.bContractUpdate.Size = new System.Drawing.Size(167, 24);
+            this.bContractUpdate.TabIndex = 53;
+            this.bContractUpdate.Text = "Sözleşme Güncelle";
+            this.bContractUpdate.Click += new System.EventHandler(this.bContractUpdate_Click);
             // 
-            // bCalculate
+            // bCarDelivery
             // 
-            this.bCalculate.AutoRoundedCorners = true;
-            this.bCalculate.BackColor = System.Drawing.Color.Transparent;
-            this.bCalculate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bCalculate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bCalculate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bCalculate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bCalculate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.bCalculate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCalculate.ForeColor = System.Drawing.Color.White;
-            this.bCalculate.Location = new System.Drawing.Point(631, 97);
-            this.bCalculate.Name = "bCalculate";
-            this.bCalculate.Size = new System.Drawing.Size(167, 35);
-            this.bCalculate.TabIndex = 57;
-            this.bCalculate.Text = "Hesapla";
-            this.bCalculate.Click += new System.EventHandler(this.bCalculate_Click);
-            // 
-            // bTemizle
-            // 
-            this.bTemizle.AutoRoundedCorners = true;
-            this.bTemizle.BackColor = System.Drawing.Color.Transparent;
-            this.bTemizle.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bTemizle.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bTemizle.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bTemizle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bTemizle.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.bTemizle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bTemizle.ForeColor = System.Drawing.Color.White;
-            this.bTemizle.Location = new System.Drawing.Point(631, 143);
-            this.bTemizle.Name = "bTemizle";
-            this.bTemizle.Size = new System.Drawing.Size(167, 30);
-            this.bTemizle.TabIndex = 58;
-            this.bTemizle.Text = "Temizle";
-            this.bTemizle.Click += new System.EventHandler(this.bTemizle_Click);
+            this.bCarDelivery.AutoRoundedCorners = true;
+            this.bCarDelivery.BackColor = System.Drawing.Color.Transparent;
+            this.bCarDelivery.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.bCarDelivery.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.bCarDelivery.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.bCarDelivery.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.bCarDelivery.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
+            this.bCarDelivery.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bCarDelivery.ForeColor = System.Drawing.Color.White;
+            this.bCarDelivery.Location = new System.Drawing.Point(358, 20);
+            this.bCarDelivery.Name = "bCarDelivery";
+            this.bCarDelivery.Size = new System.Drawing.Size(167, 24);
+            this.bCarDelivery.TabIndex = 54;
+            this.bCarDelivery.Text = "Araç Teslimi";
+            this.bCarDelivery.Click += new System.EventHandler(this.bCarDelivery_Click);
             // 
             // guna2MessageDialog1
             // 
@@ -904,6 +910,37 @@
             this.guna2MessageDialog1.Parent = null;
             this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.guna2MessageDialog1.Text = null;
+            // 
+            // txtEkstra
+            // 
+            this.txtEkstra.BorderRadius = 10;
+            this.txtEkstra.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEkstra.DefaultText = "";
+            this.txtEkstra.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEkstra.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEkstra.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEkstra.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEkstra.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEkstra.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtEkstra.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEkstra.Location = new System.Drawing.Point(1025, 20);
+            this.txtEkstra.MaxLength = 11;
+            this.txtEkstra.Name = "txtEkstra";
+            this.txtEkstra.PlaceholderText = "";
+            this.txtEkstra.SelectedText = "";
+            this.txtEkstra.Size = new System.Drawing.Size(165, 22);
+            this.txtEkstra.TabIndex = 56;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(837, 22);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(182, 20);
+            this.label8.TabIndex = 55;
+            this.label8.Text = "Alacak/Verecek Durumu:";
             // 
             // FrmContract
             // 
@@ -931,9 +968,10 @@
             this.splitContainer2.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
+            this.splitContainer3.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridCustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridContract)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -956,7 +994,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTC;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2DataGridView gridCustomer;
+        private Guna.UI2.WinForms.Guna2DataGridView gridContract;
         private Guna.UI2.WinForms.Guna2DateTimePicker datetimeCikis;
         private Guna.UI2.WinForms.Guna2DateTimePicker datetimeDonus;
         private System.Windows.Forms.Label label15;
@@ -989,5 +1027,7 @@
         private Guna.UI2.WinForms.Guna2Button bCalculate;
         private Guna.UI2.WinForms.Guna2Button bTemizle;
         private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
+        private Guna.UI2.WinForms.Guna2TextBox txtEkstra;
+        private System.Windows.Forms.Label label8;
     }
 }
