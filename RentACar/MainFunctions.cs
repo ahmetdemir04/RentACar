@@ -7,45 +7,44 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Security;
 using System.Windows.Forms;
 
 namespace RentACar
 {
     public class MainFunctions
     {
-        SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-K9SJG04\SQLEXPRESS;Initial Catalog=RentACar;Integrated Security=True");
+        ClsConnection con = new ClsConnection();
         DataTable table;
         public string DefaultCarPicture = Path.Combine(Application.StartupPath, @"default_car.png");
-        public void DML (SqlCommand cmd, string qry)
+      
+        public bool DML (SqlCommand cmd, string qry)
         {
             try
             {
-                if (connection.State != ConnectionState.Open)
-                    connection.Open();
-
-                cmd.Connection = connection;
+                cmd.Connection = con.Connection();
                 cmd.CommandText = qry;
                 cmd.ExecuteNonQuery();
-
+                
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+                return false;
             }
-            finally { connection.Close(); }
+            finally { con.Connection().Close(); }
          
         }
         public DataTable Listele(SqlDataAdapter adtr, string qry)
         {
             try
             {
-                if (connection.State != ConnectionState.Open)
-                    connection.Open();
+                con.Connection();
 
                 table = new DataTable();
-                adtr = new SqlDataAdapter(qry, connection);
+                adtr = new SqlDataAdapter(qry, con.StrConnection);
                 adtr.Fill(table);
-                connection.Close();
                 return table;
             }
             catch (Exception ex)
@@ -54,17 +53,63 @@ namespace RentACar
                 MessageBox.Show(ex.ToString());
             return null;
             }
-         
+               
+            finally { con.Connection().Close(); }
         }
+        public void BringMarka(Guna2ComboBox Cmb)
+        {
+            try
+            {
+                DataTable BrgDt = new DataTable();  
+
+                con.Connection();
+                SqlConnection connection = new SqlConnection(con.StrConnection);
+               SqlDataAdapter AllCategories = new SqlDataAdapter("SELECT * FROM TblMarka",connection);
+                AllCategories.Fill(BrgDt);
+                
+                Cmb.DataSource = BrgDt;
+                Cmb.ValueMember = "MarkaID";
+                Cmb.DisplayMember = "Marka";
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString()); 
+            }
+        }
+        public void BringModel(Guna2ComboBox Cmb, int marka)
+        {
+            try
+            {
+                DataTable BrgMD = new DataTable();
+
+                con.Connection();
+                SqlConnection connection = new SqlConnection(con.StrConnection);
+                SqlDataAdapter AllCategories = new SqlDataAdapter("SELECT * FROM TblModel WHERE marka = '"+ marka + "'", connection);
+                
+                AllCategories.Fill(BrgMD);
+                
+                Cmb.ValueMember = "ModelID";
+                Cmb.DisplayMember = "Model";
+                Cmb.DataSource = BrgMD;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
 
         public void Bos_Araclar(ComboBox _cmb, string _qry)
         {
             try
             {
-                if (connection.State != ConnectionState.Open)
-                    connection.Open();
+                con.Connection();
+                SqlConnection connection = new SqlConnection(con.StrConnection);
 
-                SqlCommand cmd = new SqlCommand(_qry,connection);
+
+                SqlCommand cmd = new SqlCommand(_qry, connection);
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
@@ -78,14 +123,14 @@ namespace RentACar
             {
                 throw;
             }
-            finally { connection.Close(); }
+            finally { con.Connection().Close(); }
         }
         public void TC_ara(Guna2TextBox _txtTC, Guna2TextBox _txtAdsoyad, Guna2TextBox _txtTelefon, string _qry)
         {
             try
             {
-                if (connection.State != ConnectionState.Open)
-                    connection.Open();
+                con.Connection();
+                SqlConnection connection = new SqlConnection(con.StrConnection);
 
                 SqlCommand cmd = new SqlCommand(_qry, connection);
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -102,15 +147,15 @@ namespace RentACar
             {
                 throw;
             }
-            finally { connection.Close(); }
+            finally { con.Connection().Close(); }
         }
 
         public void CombodanGetir(Guna2ComboBox _araclar, Guna2TextBox _marka, Guna2TextBox _seri, Guna2TextBox _model, Guna2TextBox _renk, string _qry)
         {
             try
             {
-                if (connection.State != ConnectionState.Open)
-                    connection.Open();
+                con.Connection();
+                SqlConnection connection = new SqlConnection(con.StrConnection);
 
                 SqlCommand cmd = new SqlCommand(_qry, connection);
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -129,15 +174,15 @@ namespace RentACar
             {
                 throw;
             }
-            finally { connection.Close(); }
+            finally { con.Connection().Close(); }
         }
 
         public void Ucret_Hesapla(Guna2ComboBox _kirasekli, Guna2TextBox ucret,  string _qry)
         {
             try
             {
-                if (connection.State != ConnectionState.Open)
-                    connection.Open();
+                con.Connection();
+                SqlConnection connection = new SqlConnection(con.StrConnection);
 
                 SqlCommand cmd = new SqlCommand(_qry, connection);
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -156,15 +201,13 @@ namespace RentACar
             {
                 throw;
             }
-            finally { connection.Close(); }
+            finally { con.Connection().Close(); }
         }
 
         public void SatisHesapla(Label lbl)
         {
-            if (connection.State != ConnectionState.Open)
-            {
-                connection.Open();
-            }
+            con.Connection();
+            SqlConnection connection = new SqlConnection(con.StrConnection);
 
             SqlCommand command = new SqlCommand("SELECT SUM(tutar) FROM TblSatis", connection);
             lbl.Text = "Toplam Tutar= " + command.ExecuteScalar().ToString() + " TL";

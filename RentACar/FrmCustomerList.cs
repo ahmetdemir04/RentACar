@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,33 +19,71 @@ namespace RentACar
             InitializeComponent();
         }
         MainFunctions mainfunction = new MainFunctions();
+        ClsControlHelper Chelper = new ClsControlHelper();
         private void FrmCustomerList_Load(object sender, EventArgs e)
         {
             ListCustomer();
-        }
+            gridCustomer.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 11);
+            gridCustomer.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 11);
 
+            #region CheckFields
+            tLisansNumarasi.KeyPress += Chelper.OnlyNumeric;
+            tTC.KeyPress += Chelper.OnlyNumeric;
+            tTelefon.KeyPress += Chelper.OnlyNumeric;
+
+            tAd.KeyPress += Chelper.OnlyAlphabetic;
+            tSoyad.KeyPress += Chelper.OnlyAlphabetic;
+            #endregion
+        }
+        private void ClearFields()
+        {
+            Chelper.ClearFields(splitContainer1.Panel1);
+            tSearch.Clear();
+            tLisansNumarasi.Focus();
+        }
+        private bool CheckAllFields()
+        {
+            if (!string.IsNullOrEmpty(tLisansNumarasi.Text) &&
+                !string.IsNullOrEmpty(tTC.Text) &&
+                !string.IsNullOrEmpty(tAd.Text) &&
+                !string.IsNullOrEmpty(tSoyad.Text) &&
+                !string.IsNullOrEmpty(tTelefon.Text) &&
+                !string.IsNullOrEmpty(tEposta.Text) &&
+                !string.IsNullOrEmpty(tAdres.Text))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
         private void ListCustomer()
         {
-            string qry_customer = "Select * FROM TBLMUSTERI";
+            gridCustomer.DataSource = null;
+
+            string qry_customer = "Select * FROM TBLMUSTERI WHERE durumu = 1";
             SqlDataAdapter adtr = new SqlDataAdapter();
 
             gridCustomer.DataSource = mainfunction.Listele(adtr, qry_customer);
 
 
-            gridCustomer.Columns["AdSoyad"].HeaderText = "Ad Soyad";
-            gridCustomer.Columns["Telefon"].HeaderText = "Telefon Numarası";
-            gridCustomer.Columns["Eposta"].HeaderText = "E-Posta";
+            Chelper.DatagridFormatter(gridCustomer);
+
+            gridCustomer.Columns["Durumu"].Visible = false;
+            gridCustomer.Columns["Durumu"].Visible = false;
         }
 
         private void tSearch_TextChanged(object sender, EventArgs e)
         {
-            string qry_customer = "Select * FROM TBLMUSTERI WHERE adsoyad LIKE '%" + tSearch.Text + "%' ";
+            string qry_customer = "Select * FROM TBLMUSTERI WHERE ad LIKE '%" + tSearch.Text + "%' and durumu = 1";
             SqlDataAdapter adtr = new SqlDataAdapter();
 
-            gridCustomer.Columns["AdSoyad"].HeaderText = "Ad Soyad";
-            gridCustomer.Columns["Telefon"].HeaderText = "Telefon Numarası";
-            gridCustomer.Columns["Eposta"].HeaderText = "E-Posta";
-          
+            Chelper.DatagridFormatter(gridCustomer);
+
+            gridCustomer.Columns["Durumu"].Visible = false;
+
 
             gridCustomer.DataSource = mainfunction.Listele(adtr, qry_customer);
         }
@@ -54,68 +93,84 @@ namespace RentACar
             DataGridViewRow satir = gridCustomer.CurrentRow;
 
             tTC.Text = satir.Cells["TC"].Value.ToString();
-            tAdSoyad.Text = satir.Cells["AdSoyad"].Value.ToString();
-            tEposta.Text = satir.Cells["Eposta"].Value.ToString();
+            tAd.Text = satir.Cells["Ad"].Value.ToString();
+            tSoyad.Text = satir.Cells["Soyad"].Value.ToString();
             tTelefon.Text = satir.Cells["Telefon"].Value.ToString();
+            tEposta.Text = satir.Cells["Email"].Value.ToString();
             tAdres.Text = satir.Cells["Adres"].Value.ToString();
+            tLisansNumarasi.Text = satir.Cells["LisansNumarasi"].Value.ToString();
+            DtDogumTarihi.Value = DateTime.Parse(satir.Cells["DogumTarihi"].Value.ToString());
+            DtTarih.Value = DateTime.Parse(satir.Cells["GirisTarihi"].Value.ToString());
+
         }
 
         private void bUpdate_Click(object sender, EventArgs e)
         {
-
-            string tc = tTC.Text;
-            if (!string.IsNullOrEmpty(tc))
+            if (!CheckAllFields())
             {
-                string qry_update_customer = "UPDATE TblMusteri SET adsoyad = @adsoyad, Telefon =@telefon, adres=@adres, eposta=@eposta WHERE tc =@tc";
-                SqlCommand cmd_update_customer = new SqlCommand();
-                cmd_update_customer.Parameters.AddWithValue("@tc", tc);
-                cmd_update_customer.Parameters.AddWithValue("@adsoyad", tAdSoyad.Text);
-                cmd_update_customer.Parameters.AddWithValue("@telefon", tTelefon.Text);
-                cmd_update_customer.Parameters.AddWithValue("@eposta", tEposta.Text.Trim());
-                cmd_update_customer.Parameters.AddWithValue("@adres", tAdres.Text.Trim());
-                mainfunction.DML(cmd_update_customer, qry_update_customer);
-                ListCustomer();
-                guna2MessageDialog1.Show($"{tc} Numarasına sahip kişinin güncelleme işlemi başarılı!", "RentACar");
-                foreach (Control item in Controls)
+                int? id = Convert.ToInt32(gridCustomer.CurrentRow.Cells["MusteriID"].Value);
+                if (id != null)
                 {
-                    if (item is TextBox)
-                    {
-                        item.Text = "";
-                    }
+                    string qry_update_customer = "UPDATE TblMusteri SET Tc = @tc, Ad = @ad, Soyad=@soyad, Telefon =@telefon, Adres=@adres, Email=@Email, LisansNumarasi = @LN, DogumTarihi =@DT, GirisTarihi =@GT,Durumu = @Durumu WHERE MusteriID = @ID";
+                    SqlCommand cmd_update_customer = new SqlCommand();
+                    cmd_update_customer.Parameters.AddWithValue("@Tc", tTC.Text);
+                    cmd_update_customer.Parameters.AddWithValue("@Ad", tAd.Text);
+                    cmd_update_customer.Parameters.AddWithValue("@Soyad", tSoyad.Text);
+                    cmd_update_customer.Parameters.AddWithValue("@Telefon", tTelefon.Text.Trim());
+                    cmd_update_customer.Parameters.AddWithValue("@Adres", tAdres.Text.Trim());
+                    cmd_update_customer.Parameters.AddWithValue("@Email", tEposta.Text.Trim());
+                    cmd_update_customer.Parameters.AddWithValue("@LN", tLisansNumarasi.Text.Trim());
+                    cmd_update_customer.Parameters.AddWithValue("@DT", DateTime.Parse(DtDogumTarihi.Text));
+                    cmd_update_customer.Parameters.AddWithValue("@GT", DateTime.Parse(DtTarih.Text));
+                    cmd_update_customer.Parameters.AddWithValue("@ID", id);
+
+                    bool worked = mainfunction.DML(cmd_update_customer, qry_update_customer);
+
+                    if (worked)
+                        Chelper.Gmessagebox($"{tTC.Text} Numarasına sahip kişinin güncelleme işlemi başarılı!", "Rent A Car", "Information").Show();
+
+                    ListCustomer();
+
+                    Chelper.ClearFields(splitContainer1.Panel1);
+                    tLisansNumarasi.Focus();
+                }
+                else
+                {
+                    Chelper.Gmessagebox("Güncellemek istediğiniz veriyi lütfen listeden seçiniz!", "Rent A Car", "Warning").Show();
                 }
             }
             else
             {
-                MessageBox.Show("Güncellemek istediğiniz veriyi lütfen listeden seçiniz!", "RentACar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Chelper.Gmessagebox($"Lütfen boş bi alan bırakmayınız!", "Rent A Car","Warning").Show();
             }
+          
 
-        }
-
-        private void bSave_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2ContextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-         
-            
         }
 
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string TC = gridCustomer.CurrentRow.Cells["TC"].Value.ToString();
-            string delete_qry = "DELETE FROM TblMusteri WHERE TC = @tc";
-            SqlCommand cmd_delete = new SqlCommand();
-            cmd_delete.Parameters.AddWithValue("@tc", TC);
+            long ID = Convert.ToInt64(gridCustomer.CurrentRow.Cells["MusteriID"].Value);
 
-            DialogResult dialog = MessageBox.Show($"{TC} Kimlik numarasına sahip kaydı silmek istediğnize emin misiniz? ", "RentACar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            string delete_qry = "UPDATE TblMusteri SET durumu = 0 WHERE MusteriID = @id";
+            SqlCommand cmd_delete = new SqlCommand();
+            cmd_delete.Parameters.AddWithValue("@id", ID);
+
+            DialogResult dialog = Chelper.Gmessagebox($"{TC} Kimlik numarasına sahip kaydı silmek istediğnize emin misiniz? ", "Rent A Car", "Question").Show();
             if (dialog == DialogResult.Yes)
             {
-                mainfunction.DML(cmd_delete, delete_qry);
-                guna2MessageDialog1.Show($"{TC} Numarasına sahip kişinin silme işlemi başarılı!", "RentACar");
+                bool worked = mainfunction.DML(cmd_delete, delete_qry);
+
+                if (worked)
+                    Chelper.Gmessagebox($"{TC} Kimlik numarasına sahip müşteri kaydı başarıyla silindi.", "Rent A Car", "Information").Show();
             }
             ListCustomer();
         }
+
+        private void bClear_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+        }
+
     }
 }
