@@ -105,11 +105,7 @@ namespace RentACar
         {
             try
             {
-                con.Connection();
-                SqlConnection connection = new SqlConnection(con.StrConnection);
-
-
-                SqlCommand cmd = new SqlCommand(_qry, connection);
+                SqlCommand cmd = new SqlCommand(_qry, con.Connection());
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())

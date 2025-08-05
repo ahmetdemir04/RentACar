@@ -11,7 +11,7 @@ namespace RentACar
     public class ClsControlHelper
     {
 
-        public void OnlyNumeric (object sender, KeyPressEventArgs e)
+        public void OnlyNumeric(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -84,20 +84,32 @@ namespace RentACar
                         case "UrunAd":
                             dgv.Columns[i].HeaderText = "Ürün Adı"; break;
                         case "GirisTarihi":
-                            dgv.Columns[i].HeaderText = "Giriş Tarihi"; break; 
+                            dgv.Columns[i].HeaderText = "Giriş Tarihi"; break;
                         case "YakitTipi":
                             dgv.Columns[i].HeaderText = "Yakıt Tipi"; break;
                         case "GunlukUcret":
-                            dgv.Columns[i].HeaderText = "Günlük Ücret"; 
+                            dgv.Columns[i].HeaderText = "Günlük Ücret";
                             dgv.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                             dgv.Columns[i].DefaultCellStyle.Format = "C2"; break;
                         case "Resim":
-                            dgv.Columns[i].Visible = false; break; 
+                            dgv.Columns[i].Visible = false; break;
                         case "Aktif":
-                            dgv.Columns[i].Visible = false; break; 
+                            dgv.Columns[i].Visible = false; break;
                         case "Km":
                             dgv.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                             dgv.Columns[i].DefaultCellStyle.Format = "N0"; break; //
+                        case "BaslangicTarihi":
+                            dgv.Columns[i].HeaderText = "Başlangıc Tarihi"; break;
+                        case "BitisTarihi":
+                            dgv.Columns[i].HeaderText = "Bitiş Tarihi"; break;
+                        case "TotalPrice":
+                            dgv.Columns[i].HeaderText = "Toplam Ücret";
+                            dgv.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                            dgv.Columns[i].DefaultCellStyle.Format = "C2"; break;
+                        case "OdemeDurumu":
+                            dgv.Columns[i].HeaderText = "Ödeme Durumu"; break;
+                        case "GeriDonusDurumu":
+                            dgv.Columns[i].HeaderText = "Geri Dönüş Durumu"; break;
                     }
                 }
             }
@@ -105,5 +117,5 @@ namespace RentACar
 
     }
 
-    
+
 }

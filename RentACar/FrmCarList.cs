@@ -36,14 +36,14 @@ namespace RentACar
 
         private void ListCars()
         {
-            string query_list_car = "SELECT * FROM TblArac WHERE Aktif = 1";
+            string query_list_car = "Exec ListCars";
             SqlDataAdapter adpt = new SqlDataAdapter();
 
             gridCars.DataSource = mainFunctions.Listele(adpt, query_list_car);
 
             cHelper.DatagridFormatter(gridCars);
 
-            gridCars.Columns["Durum"].HeaderText = "Kiralandı";
+            gridCars.Columns["Durum"].HeaderText = "Boşta";
 
             gridCars.Columns["resim"].Visible = false;
             gridCars.Columns["aktif"].Visible = false;
@@ -122,8 +122,8 @@ namespace RentACar
 
             string query_upd_car = "UPDATE TblArac SET Plaka= @plaka, marka=@marka, model=@model, yil=@yil,renk=@renk,Sansizman=@sanziman, YakitTipi=@YakitTipi, km=@km,GunlukUcret=@gunlukucret,durum=@durum,resim=@resim WHERE ArabaID=@id";
             SqlCommand cmd_upd_car = new SqlCommand();
-            cmd_upd_car.Parameters.AddWithValue("@marka", cmbMarka.Text);
-            cmd_upd_car.Parameters.AddWithValue("@model", cmbSeri.Text);
+            cmd_upd_car.Parameters.AddWithValue("@marka", cmbMarka.SelectedValue);
+            cmd_upd_car.Parameters.AddWithValue("@model", cmbSeri.SelectedValue);
             cmd_upd_car.Parameters.AddWithValue("@yil", tModel.Text);
             cmd_upd_car.Parameters.AddWithValue("@renk", tRenk.Text);
             cmd_upd_car.Parameters.AddWithValue("@sanziman", CmbSanziman.Text);
@@ -150,17 +150,17 @@ namespace RentACar
                 cHelper.Gmessagebox("Güncelleme işlemi başarıyla gerçekleştirildi!", "Rent A Car", "Information").Show();
 
             ListCars();
-
+            cHelper.ClearFields(this);
 
         }
 
         private void cmbMarka_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbSeri.DataSource = null;
-            
+
             if (cmbMarka.Text == null)
                 return;
-     
+
             if (int.TryParse(cmbMarka.SelectedValue?.ToString(), out int markaId))
             {
                 mainFunctions.BringModel(cmbSeri, markaId);

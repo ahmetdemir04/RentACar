@@ -517,7 +517,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridCars.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.gridCars.ColumnHeadersHeight = 30;
+            this.gridCars.ColumnHeadersHeight = 40;
             this.gridCars.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.gridCars.ContextMenuStrip = this.contextMenuStrip1;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -550,7 +550,7 @@
             this.gridCars.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridCars.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.gridCars.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.gridCars.ThemeStyle.HeaderStyle.Height = 30;
+            this.gridCars.ThemeStyle.HeaderStyle.Height = 40;
             this.gridCars.ThemeStyle.ReadOnly = true;
             this.gridCars.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.gridCars.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;

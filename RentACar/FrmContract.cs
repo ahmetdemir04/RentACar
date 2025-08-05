@@ -19,6 +19,7 @@ namespace RentACar
             InitializeComponent();
         }
         MainFunctions mainfunction = new MainFunctions();
+        ClsControlHelper cHelper = new ClsControlHelper();
         private void FrmContract_Load(object sender, EventArgs e)
         {
             BostakiAraclar();
@@ -28,15 +29,16 @@ namespace RentACar
 
         private void BostakiAraclar()
         {
-            string sorgu = "Select  * from tblarac WHERE durum = 1";
+            string sorgu = "Select * FROM Tblarac WHERE Durum = 1";
             mainfunction.Bos_Araclar(cmbArac, sorgu);
         }
 
         private void BringCarList()
         {
-            string qry = "select * from Tblsozlesme WHERE Gerialindi=0";
+            string qry = "select * from TblKiralama WHERE GeriDonusDurumu=0";
             SqlDataAdapter adtr = new SqlDataAdapter();
             gridContract.DataSource = mainfunction.Listele(adtr, qry);
+            cHelper.DatagridFormatter(gridContract);
         }
 
         private void txtTC_TextChanged(object sender, EventArgs e)
@@ -55,14 +57,14 @@ namespace RentACar
             if (cmbArac.Text == "") foreach (Control item in splitContainer2.Panel2.Controls) if (item is Guna2TextBox) item.Text = "";
 
             string qry = "select * from Tblarac WHERE plaka = '" + cmbArac.SelectedItem + "'";
-            mainfunction.CombodanGetir(cmbArac, txtMarka, txtseri, txtModel, txtrenk, qry);
+            // mainfunction.CombodanGetir(cmbArac, txtMarka, txtseri, txtModel, txtrenk, qry);
 
         }
 
         private void txtKiraSekli_SelectedIndexChanged(object sender, EventArgs e)
         {
             string qry = "select * from Tblarac WHERE plaka = '" + cmbArac.SelectedItem + "'";
-            mainfunction.Ucret_Hesapla(txtKiraSekli, txtKiraUcreti, qry);
+            //  mainfunction.Ucret_Hesapla(txtKiraSekli, txtKiraUcreti, qry);
         }
 
         private void bCalculate_Click(object sender, EventArgs e)
@@ -73,9 +75,9 @@ namespace RentACar
 
             TimeSpan gunfarki = gidis - donus;
             int gun = gunfarki.Days;
-            txtGun.Text = gun.ToString();
+            //txtGun.Text = gun.ToString();
 
-            txtTutar.Text = (gun * int.Parse(txtKiraUcreti.Text)).ToString();
+            // txtTutar.Text = (gun * int.Parse(txtKiraUcreti.Text)).ToString();
         }
 
         private void bClear_Click(object sender, EventArgs e)
@@ -88,9 +90,7 @@ namespace RentACar
             datetimeCikis.Text = DateTime.Now.ToShortDateString();
             datetimeDonus.Text = DateTime.Now.ToShortDateString();
             txtKiraUcreti.Text = "";
-            txtKiraSekli.Text = "";
-            txtGun.Text = "";
-            txtTutar.Text = "";
+
         }
 
         private void bTemizle_Click(object sender, EventArgs e)
@@ -110,14 +110,7 @@ namespace RentACar
             cmd_add_contract.Parameters.AddWithValue("@e_tarih", txtEhliyetTarihi.Text);
             cmd_add_contract.Parameters.AddWithValue("@e_yer", txtEhlytVerildigiTarih.Text);
             cmd_add_contract.Parameters.AddWithValue("@plaka", cmbArac.SelectedItem);
-            cmd_add_contract.Parameters.AddWithValue("@marka", txtMarka.Text);
-            cmd_add_contract.Parameters.AddWithValue("@seri", txtseri.Text);
-            cmd_add_contract.Parameters.AddWithValue("@yil", txtModel.Text);
-            cmd_add_contract.Parameters.AddWithValue("@renk", txtrenk.Text);
-            cmd_add_contract.Parameters.AddWithValue("@kirasekli", txtKiraSekli.Text);
-            cmd_add_contract.Parameters.AddWithValue("@kiraucreti", double.Parse(txtKiraUcreti.Text));
-            cmd_add_contract.Parameters.AddWithValue("@gun", int.Parse(txtGun.Text));
-            cmd_add_contract.Parameters.AddWithValue("@tutar", double.Parse(txtTutar.Text));
+
             cmd_add_contract.Parameters.AddWithValue("@cTarih", DateTime.Parse(datetimeCikis.Text));
             cmd_add_contract.Parameters.AddWithValue("@dTarih", DateTime.Parse(datetimeDonus.Text));
             cmd_add_contract.Parameters.AddWithValue("@GeriAlindi", false);
@@ -162,16 +155,7 @@ namespace RentACar
                 cmd_upd_contract.Parameters.AddWithValue("@e_tarih", txtEhliyetTarihi.Text);
                 cmd_upd_contract.Parameters.AddWithValue("@e_yer", txtEhlytVerildigiTarih.Text);
                 cmd_upd_contract.Parameters.AddWithValue("@plaka", plaka); // Using the plaka variable set in gridCustomer_CellDoubleClick
-                cmd_upd_contract.Parameters.AddWithValue("@marka", txtMarka.Text);
-                cmd_upd_contract.Parameters.AddWithValue("@seri", txtseri.Text);
-                cmd_upd_contract.Parameters.AddWithValue("@yil", txtModel.Text);
-                cmd_upd_contract.Parameters.AddWithValue("@renk", txtrenk.Text);
-                cmd_upd_contract.Parameters.AddWithValue("@kirasekli", txtKiraSekli.Text);
-                cmd_upd_contract.Parameters.AddWithValue("@kiraucreti", double.Parse(txtKiraUcreti.Text));
-                cmd_upd_contract.Parameters.AddWithValue("@gun", int.Parse(txtGun.Text));
-                cmd_upd_contract.Parameters.AddWithValue("@tutar", double.Parse(txtTutar.Text));
-                cmd_upd_contract.Parameters.AddWithValue("@cTarih", DateTime.Parse(datetimeCikis.Text));
-                cmd_upd_contract.Parameters.AddWithValue("@dTarih", DateTime.Parse(datetimeDonus.Text));
+
 
                 mainfunction.DML(cmd_upd_contract, query);
 
@@ -193,7 +177,7 @@ namespace RentACar
             }
             else
             {
-                MessageBox.Show("Lütfen bir sözleşme seçiniz!", "Rent A Car",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Lütfen bir sözleşme seçiniz!", "Rent A Car", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
@@ -209,14 +193,9 @@ namespace RentACar
             txtEhliyetTarihi.Text = row.Cells["e_tarih"].Value.ToString();
             txtEhlytVerildigiTarih.Text = row.Cells["e_yer"].Value.ToString();
             plaka = row.Cells["plaka"].Value.ToString();
-            txtMarka.Text = row.Cells["marka"].Value.ToString();
-            txtseri.Text = row.Cells["seri"].Value.ToString();
-            txtModel.Text = row.Cells["yil"].Value.ToString();
-            txtrenk.Text = row.Cells["renk"].Value.ToString();
-            txtKiraSekli.Text = row.Cells["kirasekli"].Value.ToString();
+
             txtKiraUcreti.Text = row.Cells["kiraucreti"].Value.ToString();
-            txtGun.Text = row.Cells["gun"].Value.ToString();
-            txtTutar.Text = row.Cells["tutar"].Value.ToString();
+
             datetimeCikis.Text = row.Cells["cTarih"].Value.ToString();
             datetimeDonus.Text = row.Cells["dTarih"].Value.ToString();
         }
@@ -233,13 +212,13 @@ namespace RentACar
             TimeSpan gunfarki = donus - bugun;
             int _gunfarki = gunfarki.Days;
 
-            double ucretfarki =_gunfarki * ucret;
+            double ucretfarki = _gunfarki * ucret;
             txtEkstra.Text = ucretfarki.ToString();
         }
 
         private void bCarDelivery_Click(object sender, EventArgs e)
         {
-            if (double.Parse(txtEkstra.Text) >= 0 )
+            if (double.Parse(txtEkstra.Text) >= 0)
             {
                 DataGridViewRow row = gridContract.CurrentRow;
                 DateTime bugun = DateTime.Parse(DateTime.Now.ToShortDateString());
@@ -252,7 +231,7 @@ namespace RentACar
                 double toplamtutar = _gun * ucret;
                 // Toplam tutar, _gun satis tablosuna aktarılacak
 
-                string sorgu = "UPDATE TblSozlesme SET GeriAlindi = 1 WHERE plaka = '"+row.Cells["plaka"].Value.ToString() + "'";
+                string sorgu = "UPDATE TblSozlesme SET GeriAlindi = 1 WHERE plaka = '" + row.Cells["plaka"].Value.ToString() + "'";
                 SqlCommand cmd = new SqlCommand();
                 mainfunction.DML(cmd, sorgu);
 
@@ -273,8 +252,8 @@ namespace RentACar
                 cmd3.Parameters.AddWithValue("@fiyat", toplamtutar);
                 cmd3.Parameters.AddWithValue("@tutar", ucret);
                 cmd3.Parameters.AddWithValue("@tarih1", DateTime.Parse(row.Cells["ctarih"].Value.ToString()));
-                cmd3.Parameters.AddWithValue("@tarih2",DateTime.Now);
-                    
+                cmd3.Parameters.AddWithValue("@tarih2", DateTime.Now);
+
                 mainfunction.DML(cmd3, sorgu3);
 
                 guna2MessageDialog1.Show("Araç teslim alındı!", "Rent A Car");
@@ -302,5 +281,14 @@ namespace RentACar
                 MessageBox.Show("Lütfen seçim yapınız", "Rent A Car", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        public string Plate { get; set; }
+        private void btnCarList_Click(object sender, EventArgs e)
+        {
+            FrmShortCarList carList = new FrmShortCarList();
+            carList.ShowDialog();
+
+            cmbArac.Text = Plate;
+        }
     }
+
 }

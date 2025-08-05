@@ -101,7 +101,6 @@ namespace RentACar
             tLisansNumarasi.Text = satir.Cells["LisansNumarasi"].Value.ToString();
             DtDogumTarihi.Value = DateTime.Parse(satir.Cells["DogumTarihi"].Value.ToString());
             DtTarih.Value = DateTime.Parse(satir.Cells["GirisTarihi"].Value.ToString());
-
         }
 
         private void bUpdate_Click(object sender, EventArgs e)
@@ -141,9 +140,9 @@ namespace RentACar
             }
             else
             {
-                Chelper.Gmessagebox($"Lütfen boş bi alan bırakmayınız!", "Rent A Car","Warning").Show();
+                Chelper.Gmessagebox($"Lütfen boş bi alan bırakmayınız!", "Rent A Car", "Warning").Show();
             }
-          
+
 
         }
 
