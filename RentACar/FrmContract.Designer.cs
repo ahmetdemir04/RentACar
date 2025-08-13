@@ -65,11 +65,10 @@
             this.label13 = new System.Windows.Forms.Label();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.gridContract = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.txtEkstra = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtSozlesmeAra = new Guna.UI2.WinForms.Guna2TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
             this.bContractUpdate = new Guna.UI2.WinForms.Guna2Button();
-            this.bCarDelivery = new Guna.UI2.WinForms.Guna2Button();
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -193,9 +192,10 @@
             this.txtVerildigiYer.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtVerildigiYer.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtVerildigiYer.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtVerildigiYer.ForeColor = System.Drawing.Color.Black;
             this.txtVerildigiYer.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtVerildigiYer.Location = new System.Drawing.Point(137, 225);
-            this.txtVerildigiYer.MaxLength = 11;
+            this.txtVerildigiYer.MaxLength = 20;
             this.txtVerildigiYer.Name = "txtVerildigiYer";
             this.txtVerildigiYer.PlaceholderText = "";
             this.txtVerildigiYer.SelectedText = "";
@@ -235,9 +235,10 @@
             this.txtEhliyetNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtEhliyetNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEhliyetNo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtEhliyetNo.ForeColor = System.Drawing.Color.Black;
             this.txtEhliyetNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEhliyetNo.Location = new System.Drawing.Point(137, 161);
-            this.txtEhliyetNo.MaxLength = 11;
+            this.txtEhliyetNo.MaxLength = 10;
             this.txtEhliyetNo.Name = "txtEhliyetNo";
             this.txtEhliyetNo.PlaceholderText = "";
             this.txtEhliyetNo.SelectedText = "";
@@ -266,9 +267,10 @@
             this.txtTelefon.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTelefon.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTelefon.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTelefon.ForeColor = System.Drawing.Color.Black;
             this.txtTelefon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTelefon.Location = new System.Drawing.Point(137, 133);
-            this.txtTelefon.MaxLength = 11;
+            this.txtTelefon.MaxLength = 10;
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.PlaceholderText = "";
             this.txtTelefon.SelectedText = "";
@@ -297,9 +299,10 @@
             this.txtAdSoyad.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtAdSoyad.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAdSoyad.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtAdSoyad.ForeColor = System.Drawing.Color.Black;
             this.txtAdSoyad.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAdSoyad.Location = new System.Drawing.Point(137, 105);
-            this.txtAdSoyad.MaxLength = 11;
+            this.txtAdSoyad.MaxLength = 30;
             this.txtAdSoyad.Name = "txtAdSoyad";
             this.txtAdSoyad.PlaceholderText = "";
             this.txtAdSoyad.SelectedText = "";
@@ -328,6 +331,7 @@
             this.txtTC.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTC.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTC.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTC.ForeColor = System.Drawing.Color.Black;
             this.txtTC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTC.Location = new System.Drawing.Point(137, 77);
             this.txtTC.MaxLength = 11;
@@ -335,7 +339,7 @@
             this.txtTC.PlaceholderText = "";
             this.txtTC.SelectedText = "";
             this.txtTC.Size = new System.Drawing.Size(215, 22);
-            this.txtTC.TabIndex = 15;
+            this.txtTC.TabIndex = 0;
             this.txtTC.TextChanged += new System.EventHandler(this.txtTC_TextChanged);
             this.txtTC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTC_KeyDown);
             // 
@@ -394,7 +398,7 @@
             this.bTemizle.Location = new System.Drawing.Point(653, 138);
             this.bTemizle.Name = "bTemizle";
             this.bTemizle.Size = new System.Drawing.Size(167, 30);
-            this.bTemizle.TabIndex = 58;
+            this.bTemizle.TabIndex = 6;
             this.bTemizle.Text = "Temizle";
             this.bTemizle.Click += new System.EventHandler(this.bTemizle_Click);
             // 
@@ -412,7 +416,7 @@
             this.bContractAdd.Location = new System.Drawing.Point(653, 105);
             this.bContractAdd.Name = "bContractAdd";
             this.bContractAdd.Size = new System.Drawing.Size(167, 27);
-            this.bContractAdd.TabIndex = 52;
+            this.bContractAdd.TabIndex = 5;
             this.bContractAdd.Text = "Sözleşme Ekle";
             this.bContractAdd.Click += new System.EventHandler(this.bContractAdd_Click);
             // 
@@ -430,7 +434,7 @@
             this.bCalculate.Location = new System.Drawing.Point(388, 232);
             this.bCalculate.Name = "bCalculate";
             this.bCalculate.Size = new System.Drawing.Size(122, 26);
-            this.bCalculate.TabIndex = 57;
+            this.bCalculate.TabIndex = 4;
             this.bCalculate.Text = "Hesapla";
             this.bCalculate.Click += new System.EventHandler(this.bCalculate_Click);
             // 
@@ -443,12 +447,12 @@
             this.cmbArac.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbArac.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbArac.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbArac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbArac.ForeColor = System.Drawing.Color.Black;
             this.cmbArac.ItemHeight = 18;
             this.cmbArac.Location = new System.Drawing.Point(385, 77);
             this.cmbArac.Name = "cmbArac";
             this.cmbArac.Size = new System.Drawing.Size(182, 24);
-            this.cmbArac.TabIndex = 55;
+            this.cmbArac.TabIndex = 0;
             this.cmbArac.SelectedIndexChanged += new System.EventHandler(this.cmbArac_SelectedIndexChanged);
             // 
             // guna2Separator1
@@ -471,14 +475,16 @@
             this.txtKiraUcreti.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtKiraUcreti.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtKiraUcreti.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtKiraUcreti.ForeColor = System.Drawing.Color.Black;
             this.txtKiraUcreti.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtKiraUcreti.Location = new System.Drawing.Point(388, 192);
-            this.txtKiraUcreti.MaxLength = 11;
+            this.txtKiraUcreti.MaxLength = 20;
             this.txtKiraUcreti.Name = "txtKiraUcreti";
             this.txtKiraUcreti.PlaceholderText = "";
+            this.txtKiraUcreti.ReadOnly = true;
             this.txtKiraUcreti.SelectedText = "";
             this.txtKiraUcreti.Size = new System.Drawing.Size(182, 22);
-            this.txtKiraUcreti.TabIndex = 48;
+            this.txtKiraUcreti.TabIndex = 3;
             // 
             // datetimeCikis
             // 
@@ -492,7 +498,7 @@
             this.datetimeCikis.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.datetimeCikis.Name = "datetimeCikis";
             this.datetimeCikis.Size = new System.Drawing.Size(182, 22);
-            this.datetimeCikis.TabIndex = 41;
+            this.datetimeCikis.TabIndex = 1;
             this.datetimeCikis.Value = new System.DateTime(2025, 7, 25, 0, 27, 9, 383);
             // 
             // datetimeDonus
@@ -507,7 +513,7 @@
             this.datetimeDonus.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.datetimeDonus.Name = "datetimeDonus";
             this.datetimeDonus.Size = new System.Drawing.Size(182, 22);
-            this.datetimeDonus.TabIndex = 40;
+            this.datetimeDonus.TabIndex = 2;
             this.datetimeDonus.Value = new System.DateTime(2025, 7, 25, 0, 27, 9, 383);
             // 
             // label15
@@ -578,11 +584,10 @@
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.txtEkstra);
+            this.splitContainer3.Panel2.Controls.Add(this.txtSozlesmeAra);
             this.splitContainer3.Panel2.Controls.Add(this.label8);
             this.splitContainer3.Panel2.Controls.Add(this.guna2Separator3);
             this.splitContainer3.Panel2.Controls.Add(this.bContractUpdate);
-            this.splitContainer3.Panel2.Controls.Add(this.bCarDelivery);
             this.splitContainer3.Size = new System.Drawing.Size(1255, 432);
             this.splitContainer3.SplitterDistance = 361;
             this.splitContainer3.TabIndex = 0;
@@ -645,36 +650,37 @@
             this.gridContract.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCustomer_CellClick);
             this.gridContract.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCustomer_CellDoubleClick);
             // 
-            // txtEkstra
+            // txtSozlesmeAra
             // 
-            this.txtEkstra.BorderRadius = 10;
-            this.txtEkstra.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEkstra.DefaultText = "";
-            this.txtEkstra.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtEkstra.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtEkstra.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEkstra.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEkstra.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEkstra.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtEkstra.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEkstra.Location = new System.Drawing.Point(1066, 23);
-            this.txtEkstra.MaxLength = 11;
-            this.txtEkstra.Name = "txtEkstra";
-            this.txtEkstra.PlaceholderText = "";
-            this.txtEkstra.SelectedText = "";
-            this.txtEkstra.Size = new System.Drawing.Size(165, 22);
-            this.txtEkstra.TabIndex = 56;
+            this.txtSozlesmeAra.BorderRadius = 10;
+            this.txtSozlesmeAra.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSozlesmeAra.DefaultText = "";
+            this.txtSozlesmeAra.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSozlesmeAra.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSozlesmeAra.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSozlesmeAra.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSozlesmeAra.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSozlesmeAra.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSozlesmeAra.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSozlesmeAra.Location = new System.Drawing.Point(126, 31);
+            this.txtSozlesmeAra.MaxLength = 60;
+            this.txtSozlesmeAra.Name = "txtSozlesmeAra";
+            this.txtSozlesmeAra.PlaceholderText = "Ad\'a göre aramaa";
+            this.txtSozlesmeAra.SelectedText = "";
+            this.txtSozlesmeAra.Size = new System.Drawing.Size(165, 22);
+            this.txtSozlesmeAra.TabIndex = 56;
+            this.txtSozlesmeAra.TextChanged += new System.EventHandler(this.txtSozlesmeAra_TextChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(878, 25);
+            this.label8.Location = new System.Drawing.Point(13, 31);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(182, 20);
+            this.label8.Size = new System.Drawing.Size(107, 20);
             this.label8.TabIndex = 55;
-            this.label8.Text = "Alacak/Verecek Durumu:";
+            this.label8.Text = "Sözleşme Ara:";
             // 
             // guna2Separator3
             // 
@@ -695,30 +701,12 @@
             this.bContractUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.bContractUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bContractUpdate.ForeColor = System.Drawing.Color.White;
-            this.bContractUpdate.Location = new System.Drawing.Point(18, 23);
+            this.bContractUpdate.Location = new System.Drawing.Point(1066, 31);
             this.bContractUpdate.Name = "bContractUpdate";
             this.bContractUpdate.Size = new System.Drawing.Size(167, 24);
             this.bContractUpdate.TabIndex = 53;
             this.bContractUpdate.Text = "Sözleşme Güncelle";
             this.bContractUpdate.Click += new System.EventHandler(this.bContractUpdate_Click);
-            // 
-            // bCarDelivery
-            // 
-            this.bCarDelivery.AutoRoundedCorners = true;
-            this.bCarDelivery.BackColor = System.Drawing.Color.Transparent;
-            this.bCarDelivery.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bCarDelivery.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bCarDelivery.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bCarDelivery.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bCarDelivery.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.bCarDelivery.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bCarDelivery.ForeColor = System.Drawing.Color.White;
-            this.bCarDelivery.Location = new System.Drawing.Point(191, 23);
-            this.bCarDelivery.Name = "bCarDelivery";
-            this.bCarDelivery.Size = new System.Drawing.Size(167, 24);
-            this.bCarDelivery.TabIndex = 54;
-            this.bCarDelivery.Text = "Araç Teslimi";
-            this.bCarDelivery.Click += new System.EventHandler(this.bCarDelivery_Click);
             // 
             // guna2MessageDialog1
             // 
@@ -795,12 +783,11 @@
         private Guna.UI2.WinForms.Guna2Separator guna2Separator3;
         private Guna.UI2.WinForms.Guna2Button bContractUpdate;
         private Guna.UI2.WinForms.Guna2Button bContractAdd;
-        private Guna.UI2.WinForms.Guna2Button bCarDelivery;
         private Guna.UI2.WinForms.Guna2ComboBox cmbArac;
         private Guna.UI2.WinForms.Guna2Button bCalculate;
         private Guna.UI2.WinForms.Guna2Button bTemizle;
         private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
-        private Guna.UI2.WinForms.Guna2TextBox txtEkstra;
+        private Guna.UI2.WinForms.Guna2TextBox txtSozlesmeAra;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2PictureBox pcboxCar;
         private Guna.UI2.WinForms.Guna2Button btnCarList;

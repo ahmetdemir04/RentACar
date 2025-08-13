@@ -73,9 +73,29 @@ namespace RentACar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap agreement1 {
+            get {
+                object obj = ResourceManager.GetObject("agreement1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap car {
             get {
                 object obj = ResourceManager.GetObject("car", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap car_2 {
+            get {
+                object obj = ResourceManager.GetObject("car_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +156,16 @@ namespace RentACar.Properties {
         internal static System.Drawing.Bitmap customer__2_ {
             get {
                 object obj = ResourceManager.GetObject("customer (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap customer1 {
+            get {
+                object obj = ResourceManager.GetObject("customer1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

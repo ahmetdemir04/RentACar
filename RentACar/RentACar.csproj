@@ -47,6 +47,7 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -97,6 +98,12 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSaleDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSaleDetail.Designer.cs">
+      <DependentUpon>FrmSaleDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSaleDetail.resx">
+      <DependentUpon>FrmSaleDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSales.resx">
       <DependentUpon>FrmSales.cs</DependentUpon>
@@ -198,6 +208,9 @@
     <Content Include="default_car.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\agreement1.png" />
+    <None Include="Resources\customer1.png" />
+    <None Include="Resources\car_2.png" />
     <None Include="Resources\default_car.png" />
     <None Include="Resources\checking %282%29.png" />
     <None Include="Resources\checking %281%29.png" />

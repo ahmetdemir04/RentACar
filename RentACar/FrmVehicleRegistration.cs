@@ -130,7 +130,7 @@ namespace RentACar
 
                 SqlCommand cmd_car_add = new SqlCommand();
 
-                string imagepath = Path.Combine(Application.StartupPath, "Images", tPlaka.Text + ".png");
+                string imagepath = Path.Combine("Images", tPlaka.Text + ".png");
 
                 cmd_car_add.Parameters.AddWithValue("@Plaka", tPlaka.Text);
                 cmd_car_add.Parameters.AddWithValue("@Marka", cmbMarka.SelectedValue);

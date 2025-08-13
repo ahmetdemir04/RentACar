@@ -9,7 +9,7 @@ namespace RentACar
 {
     public class ClsConnection
     {
-        public string StrConnection = @"Data Source=ETIRNESE\SQLEXPRESS;Initial Catalog=rtcar;Integrated Security=True;TrustServerCertificate=True";
+        public string StrConnection = @"Data Source=DESKTOP-K9SJG04\SQLEXPRESS;Initial Catalog=RentACar;Integrated Security=True;TrustServerCertificate=True";
       
         public SqlConnection Connection()
         {

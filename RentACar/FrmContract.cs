@@ -34,6 +34,10 @@ namespace RentACar
             gridContract.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Regular);
             gridContract.DefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
 
+            datetimeCikis.Value = DateTime.Now;
+            datetimeDonus.Value = DateTime.Now;
+
+
             BostakiAraclar();
 
             BringCarList();
@@ -45,7 +49,7 @@ namespace RentACar
             mainfunction.Bos_Araclar(cmbArac, sorgu);
         }
 
-        private void BringCarList()
+        public void BringCarList()
         {
             string qry = "Exec ListRentCars";
             SqlDataAdapter adtr = new SqlDataAdapter();
@@ -123,7 +127,7 @@ namespace RentACar
 
                 double ucret = toplamGun * KiralamaFiyati;
 
-                txtKiraUcreti.Text = ucret.ToString();
+                txtKiraUcreti.Text = ucret.ToString("N2");
             }
             else
             {
@@ -184,16 +188,15 @@ namespace RentACar
                     return;
                 }
 
-                string query = "INSERT INTO TblKiralama (MusteriID,ArabaID,BaslangicTarihi,BitisTarihi,TotalPrice,GunlukUcret,OdemeDurumu,GeriDonusDurumu) VALUES (@MusteriID, @ArabaID, @BaslangicTarihi, @BitisTarihi, @TotalPrice, @GunlukUcret, @OdemeDurumu, @GeriDonusDurumu)";
+                string query = "INSERT INTO TblKiralama (MusteriID,ArabaID,BaslangicTarihi,BitisTarihi,ToplamUcret ,GunlukUcret,GeriDonusDurumu) VALUES (@MusteriID, @ArabaID, @BaslangicTarihi, @BitisTarihi, @ToplamUcret, @GunlukUcret, @GeriDonusDurumu)";
 
                 SqlCommand cmd_add_contract = new SqlCommand();
                 cmd_add_contract.Parameters.AddWithValue("@MusteriID", MusteriID);
                 cmd_add_contract.Parameters.AddWithValue("@ArabaID", ArabaID);
                 cmd_add_contract.Parameters.AddWithValue("@BaslangicTarihi", DateTime.Parse(datetimeCikis.Text));
                 cmd_add_contract.Parameters.AddWithValue("@BitisTarihi", DateTime.Parse(datetimeDonus.Text));
-                cmd_add_contract.Parameters.AddWithValue("@TotalPrice", cHelper.MakeDouble(txtKiraUcreti.Text));
+                cmd_add_contract.Parameters.AddWithValue("@ToplamUcret", cHelper.MakeDouble(txtKiraUcreti.Text));
                 cmd_add_contract.Parameters.AddWithValue("@GunlukUcret", GunlukUcret);
-                cmd_add_contract.Parameters.AddWithValue("@OdemeDurumu", false);
                 cmd_add_contract.Parameters.AddWithValue("@GeriDonusDurumu", false);
 
                 bool worked = mainfunction.DML(cmd_add_contract, query);
@@ -306,7 +309,7 @@ namespace RentACar
 
         private void bCarDelivery_Click(object sender, EventArgs e)
         {
-            if (double.Parse(txtEkstra.Text) >= 0)
+            if (double.Parse(txtSozlesmeAra.Text) >= 0)
             {
                 DataGridViewRow row = gridContract.CurrentRow;
                 DateTime bugun = DateTime.Parse(DateTime.Now.ToShortDateString());
@@ -345,7 +348,7 @@ namespace RentACar
                 mainfunction.DML(cmd3, sorgu3);
 
                 guna2MessageDialog1.Show("Araç teslim alındı!", "Rent A Car");
-                txtEkstra.Text = "";
+                txtSozlesmeAra.Text = "";
 
                 cmbArac.Items.Clear();
                 BostakiAraclar();
@@ -419,7 +422,19 @@ namespace RentACar
             }
         }
 
-      
+
+        private void txtSozlesmeAra_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtSozlesmeAra.Text))
+            {
+                DataTable dt = (DataTable)gridContract.DataSource;
+
+                if (dt != null)
+                {
+                    dt.DefaultView.RowFilter = string.Format("[Ad Soyad] LIKE '%{0}%'", txtSozlesmeAra.Text);
+                }
+            }
+        }
     }
 
 }

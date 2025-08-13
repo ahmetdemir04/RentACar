@@ -54,12 +54,12 @@
             this.tTC = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.tSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.gridCustomer = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.tSearch = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -450,28 +450,6 @@
             this.splitContainer2.SplitterDistance = 64;
             this.splitContainer2.TabIndex = 0;
             // 
-            // tSearch
-            // 
-            this.tSearch.BorderRadius = 10;
-            this.tSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tSearch.DefaultText = "";
-            this.tSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tSearch.Location = new System.Drawing.Point(105, 24);
-            this.tSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tSearch.MaxLength = 11;
-            this.tSearch.Name = "tSearch";
-            this.tSearch.PlaceholderText = "";
-            this.tSearch.SelectedText = "";
-            this.tSearch.Size = new System.Drawing.Size(215, 22);
-            this.tSearch.TabIndex = 0;
-            this.tSearch.TextChanged += new System.EventHandler(this.tSearch_TextChanged);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -575,6 +553,28 @@
             this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.guna2MessageDialog1.Text = null;
             // 
+            // tSearch
+            // 
+            this.tSearch.BorderRadius = 10;
+            this.tSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tSearch.DefaultText = "";
+            this.tSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tSearch.Location = new System.Drawing.Point(105, 24);
+            this.tSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tSearch.MaxLength = 11;
+            this.tSearch.Name = "tSearch";
+            this.tSearch.PlaceholderText = "";
+            this.tSearch.SelectedText = "";
+            this.tSearch.Size = new System.Drawing.Size(215, 22);
+            this.tSearch.TabIndex = 0;
+            this.tSearch.TextChanged += new System.EventHandler(this.tSearch_TextChanged);
+            // 
             // FrmCustomerList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -621,7 +621,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DataGridView gridCustomer;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private Guna.UI2.WinForms.Guna2TextBox tSearch;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
         private Guna.UI2.WinForms.Guna2ContextMenuStrip guna2ContextMenuStrip1;
@@ -634,5 +633,6 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker DtTarih;
         private Guna.UI2.WinForms.Guna2DateTimePicker DtDogumTarihi;
         private System.Windows.Forms.Label label10;
+        private Guna.UI2.WinForms.Guna2TextBox tSearch;
     }
 }

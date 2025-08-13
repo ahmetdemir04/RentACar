@@ -123,7 +123,7 @@
             this.cmbSeri.Location = new System.Drawing.Point(139, 115);
             this.cmbSeri.Name = "cmbSeri";
             this.cmbSeri.Size = new System.Drawing.Size(215, 26);
-            this.cmbSeri.TabIndex = 3;
+            this.cmbSeri.TabIndex = 2;
             // 
             // label1
             // 
@@ -187,7 +187,7 @@
             this.tModel.PlaceholderText = "";
             this.tModel.SelectedText = "";
             this.tModel.Size = new System.Drawing.Size(215, 26);
-            this.tModel.TabIndex = 2;
+            this.tModel.TabIndex = 3;
             // 
             // tRenk
             // 
@@ -348,7 +348,7 @@
             this.tGunlukUcret.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tGunlukUcret.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tGunlukUcret.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tGunlukUcret.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tGunlukUcret.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tGunlukUcret.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tGunlukUcret.Location = new System.Drawing.Point(139, 342);
             this.tGunlukUcret.MaxLength = 11;
@@ -403,7 +403,7 @@
             this.cSansizman.Location = new System.Drawing.Point(139, 305);
             this.cSansizman.Name = "cSansizman";
             this.cSansizman.Size = new System.Drawing.Size(215, 26);
-            this.cSansizman.TabIndex = 39;
+            this.cSansizman.TabIndex = 7;
             // 
             // FrmVehicleRegistration
             // 

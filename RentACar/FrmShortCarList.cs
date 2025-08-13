@@ -35,26 +35,25 @@ namespace RentACar
 
         private void gridCarList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            tPlaka.Text = gridCarList.CurrentRow.Cells["Plaka"].Value.ToString();
-            tMarka.Text = gridCarList.CurrentRow.Cells["Marka"].Value.ToString();
-            tModel.Text = gridCarList.CurrentRow.Cells["Model"].Value.ToString();
-            tYil.Text = gridCarList.CurrentRow.Cells["Yil"].Value.ToString();
-            tRenk.Text = gridCarList.CurrentRow.Cells["Renk"].Value.ToString();
-            tSansizman.Text = gridCarList.CurrentRow.Cells["Sansizman"].Value.ToString();
-            tYakitTipi.Text = gridCarList.CurrentRow.Cells["YakitTipi"].Value.ToString();
-            tGunluk.Text = gridCarList.CurrentRow.Cells["GunlukUcret"].Value + " ₺";
-            tKm.Text = gridCarList.CurrentRow.Cells["Km"].Value.ToString();
+            lPlaka.Text = gridCarList.CurrentRow.Cells["Plaka"].Value.ToString();
+            lMarka.Text = gridCarList.CurrentRow.Cells["Marka"].Value.ToString();
+            lModel.Text = gridCarList.CurrentRow.Cells["Model"].Value.ToString();
+            lYil.Text = gridCarList.CurrentRow.Cells["Yil"].Value.ToString();
+            lRenk.Text = gridCarList.CurrentRow.Cells["Renk"].Value.ToString();
+            lSansizman.Text = gridCarList.CurrentRow.Cells["Sansizman"].Value.ToString();
+            lYakitTipi.Text = gridCarList.CurrentRow.Cells["YakitTipi"].Value.ToString();
+            lGunluk.Text = gridCarList.CurrentRow.Cells["GunlukUcret"].Value + " ₺";
+            lKm.Text = gridCarList.CurrentRow.Cells["Km"].Value.ToString();
 
 
-            string pics = gridCarList.CurrentRow.Cells["Resim"].Value.ToString();
+            string ImgSource = gridCarList.CurrentRow.Cells["Resim"].Value.ToString();
 
-            string pLocation = Path.Combine(Application.StartupPath, "Images", pics);
 
-            if (pics != "" && pics != null)
+            if (ImgSource != "" && ImgSource != null)
             {
-                if (File.Exists(pLocation))
+                if (File.Exists(ImgSource))
                 {
-                    pcboxCar.Image = Image.FromFile(pics);
+                    pcboxCar.Image = Image.FromFile(ImgSource);
                 }
                 else
                 {
@@ -66,13 +65,13 @@ namespace RentACar
         private void bSelect_Click(object sender, EventArgs e)
         {
 
-            if (tPlaka.Text != "...")
+            if (lPlaka.Text != "...")
             {
                 FrmContract acikForm = Application.OpenForms["FrmContract"] as FrmContract;
                 acikForm.ArabaID = Convert.ToInt32(gridCarList.CurrentRow.Cells["ArabaID"].Value);
                 acikForm.GunlukUcret = cHelper.MakeDouble(gridCarList.CurrentRow.Cells["GunlukUcret"].Value.ToString());
-                acikForm.Plaka = tPlaka.Text;
-                acikForm.KiralamaFiyati = cHelper.MakeDouble(tGunluk.Text);
+                acikForm.Plaka = lPlaka.Text;
+                acikForm.KiralamaFiyati = cHelper.MakeDouble(lGunluk.Text);
                 this.Close();
             }
             else
@@ -82,6 +81,18 @@ namespace RentACar
 
         }
 
-    
+
+        private void tSearchPlate_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(tSearchPlate.Text))
+            {
+                gridCarList.DataSource = null;
+                string plate = tSearchPlate.Text.Trim();
+
+                string qry = "Select ArabaID, Plaka, tMrk.Marka, tModel.Model,\r\nYil, Renk, Km, Sansizman, YakitTipi, GunlukUcret,\r\nDurum, Resim From TBLARAC tArac\r\nINNER JOIN TblMarka tMrk ON\r\ntArac.ArabaID = tMrk.MarkaID\r\nINNER JOIN TblModel tModel ON \r\ntMrk.MarkaID = tModel.Marka\r\n\r\n\r\n\r\nWHERE Plaka LIKE '%" + plate +"%'";
+                SqlDataAdapter adp = new SqlDataAdapter();
+                gridCarList.DataSource = main.Listele(adp, qry); cHelper.DatagridFormatter(gridCarList);
+            }
+        }
     }
 }

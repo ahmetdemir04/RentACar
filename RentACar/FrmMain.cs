@@ -16,7 +16,7 @@ namespace RentACar
         {
             InitializeComponent();
         }
-
+        MainFunctions main = new MainFunctions();
         private void bExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -56,6 +56,19 @@ namespace RentACar
         {
             FrmSales frm = new FrmSales();
             frm.ShowDialog();
+        }
+
+ 
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            List<string> dashboardData = new List<string>();
+            dashboardData = main.Dashboard();
+
+
+            lArabaSayisi.Text = dashboardData[0];
+            lMusteriSayisi.Text = dashboardData[1];
+            lSozlesme.Text = dashboardData[2];
+            lBitmisSozelesme.Text = dashboardData[3];
         }
     }
 }

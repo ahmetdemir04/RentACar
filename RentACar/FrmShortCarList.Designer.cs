@@ -36,25 +36,28 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.bSelect = new Guna.UI2.WinForms.Guna2Button();
-            this.tPlaka = new System.Windows.Forms.Label();
-            this.tSansizman = new System.Windows.Forms.Label();
+            this.lPlaka = new System.Windows.Forms.Label();
+            this.lSansizman = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tMarka = new System.Windows.Forms.Label();
-            this.tKm = new System.Windows.Forms.Label();
+            this.lMarka = new System.Windows.Forms.Label();
+            this.lKm = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.tModel = new System.Windows.Forms.Label();
-            this.tGunluk = new System.Windows.Forms.Label();
+            this.lModel = new System.Windows.Forms.Label();
+            this.lGunluk = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.tYil = new System.Windows.Forms.Label();
-            this.tYakitTipi = new System.Windows.Forms.Label();
+            this.lYil = new System.Windows.Forms.Label();
+            this.lYakitTipi = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.tRenk = new System.Windows.Forms.Label();
+            this.lRenk = new System.Windows.Forms.Label();
             this.pcboxCar = new Guna.UI2.WinForms.Guna2PictureBox();
             this.gridCarList = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tSearchPlate = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -62,6 +65,10 @@
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcboxCar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCarList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -78,7 +85,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.gridCarList);
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(1078, 582);
             this.splitContainer1.SplitterDistance = 287;
             this.splitContainer1.TabIndex = 0;
@@ -87,23 +94,23 @@
             // 
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.bSelect);
-            this.guna2Panel1.Controls.Add(this.tPlaka);
-            this.guna2Panel1.Controls.Add(this.tSansizman);
+            this.guna2Panel1.Controls.Add(this.lPlaka);
+            this.guna2Panel1.Controls.Add(this.lSansizman);
             this.guna2Panel1.Controls.Add(this.label4);
             this.guna2Panel1.Controls.Add(this.label3);
-            this.guna2Panel1.Controls.Add(this.tMarka);
-            this.guna2Panel1.Controls.Add(this.tKm);
+            this.guna2Panel1.Controls.Add(this.lMarka);
+            this.guna2Panel1.Controls.Add(this.lKm);
             this.guna2Panel1.Controls.Add(this.label6);
             this.guna2Panel1.Controls.Add(this.label16);
-            this.guna2Panel1.Controls.Add(this.tModel);
-            this.guna2Panel1.Controls.Add(this.tGunluk);
+            this.guna2Panel1.Controls.Add(this.lModel);
+            this.guna2Panel1.Controls.Add(this.lGunluk);
             this.guna2Panel1.Controls.Add(this.label12);
             this.guna2Panel1.Controls.Add(this.label14);
-            this.guna2Panel1.Controls.Add(this.tYil);
-            this.guna2Panel1.Controls.Add(this.tYakitTipi);
+            this.guna2Panel1.Controls.Add(this.lYil);
+            this.guna2Panel1.Controls.Add(this.lYakitTipi);
             this.guna2Panel1.Controls.Add(this.label10);
             this.guna2Panel1.Controls.Add(this.label8);
-            this.guna2Panel1.Controls.Add(this.tRenk);
+            this.guna2Panel1.Controls.Add(this.lRenk);
             this.guna2Panel1.Location = new System.Drawing.Point(32, 186);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(221, 375);
@@ -138,27 +145,27 @@
             this.bSelect.Text = "Seç";
             this.bSelect.Click += new System.EventHandler(this.bSelect_Click);
             // 
-            // tPlaka
+            // lPlaka
             // 
-            this.tPlaka.AutoSize = true;
-            this.tPlaka.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tPlaka.ForeColor = System.Drawing.Color.White;
-            this.tPlaka.Location = new System.Drawing.Point(111, 12);
-            this.tPlaka.Name = "tPlaka";
-            this.tPlaka.Size = new System.Drawing.Size(22, 21);
-            this.tPlaka.TabIndex = 62;
-            this.tPlaka.Text = "...";
+            this.lPlaka.AutoSize = true;
+            this.lPlaka.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPlaka.ForeColor = System.Drawing.Color.White;
+            this.lPlaka.Location = new System.Drawing.Point(111, 12);
+            this.lPlaka.Name = "lPlaka";
+            this.lPlaka.Size = new System.Drawing.Size(22, 21);
+            this.lPlaka.TabIndex = 62;
+            this.lPlaka.Text = "...";
             // 
-            // tSansizman
+            // lSansizman
             // 
-            this.tSansizman.AutoSize = true;
-            this.tSansizman.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tSansizman.ForeColor = System.Drawing.Color.White;
-            this.tSansizman.Location = new System.Drawing.Point(112, 299);
-            this.tSansizman.Name = "tSansizman";
-            this.tSansizman.Size = new System.Drawing.Size(22, 21);
-            this.tSansizman.TabIndex = 78;
-            this.tSansizman.Text = "...";
+            this.lSansizman.AutoSize = true;
+            this.lSansizman.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lSansizman.ForeColor = System.Drawing.Color.White;
+            this.lSansizman.Location = new System.Drawing.Point(112, 299);
+            this.lSansizman.Name = "lSansizman";
+            this.lSansizman.Size = new System.Drawing.Size(22, 21);
+            this.lSansizman.TabIndex = 78;
+            this.lSansizman.Text = "...";
             // 
             // label4
             // 
@@ -182,27 +189,27 @@
             this.label3.TabIndex = 77;
             this.label3.Text = "Şansızman:";
             // 
-            // tMarka
+            // lMarka
             // 
-            this.tMarka.AutoSize = true;
-            this.tMarka.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tMarka.ForeColor = System.Drawing.Color.White;
-            this.tMarka.Location = new System.Drawing.Point(111, 47);
-            this.tMarka.Name = "tMarka";
-            this.tMarka.Size = new System.Drawing.Size(22, 21);
-            this.tMarka.TabIndex = 64;
-            this.tMarka.Text = "...";
+            this.lMarka.AutoSize = true;
+            this.lMarka.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lMarka.ForeColor = System.Drawing.Color.White;
+            this.lMarka.Location = new System.Drawing.Point(111, 47);
+            this.lMarka.Name = "lMarka";
+            this.lMarka.Size = new System.Drawing.Size(22, 21);
+            this.lMarka.TabIndex = 64;
+            this.lMarka.Text = "...";
             // 
-            // tKm
+            // lKm
             // 
-            this.tKm.AutoSize = true;
-            this.tKm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tKm.ForeColor = System.Drawing.Color.White;
-            this.tKm.Location = new System.Drawing.Point(111, 263);
-            this.tKm.Name = "tKm";
-            this.tKm.Size = new System.Drawing.Size(22, 21);
-            this.tKm.TabIndex = 76;
-            this.tKm.Text = "...";
+            this.lKm.AutoSize = true;
+            this.lKm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lKm.ForeColor = System.Drawing.Color.White;
+            this.lKm.Location = new System.Drawing.Point(111, 263);
+            this.lKm.Name = "lKm";
+            this.lKm.Size = new System.Drawing.Size(22, 21);
+            this.lKm.TabIndex = 76;
+            this.lKm.Text = "...";
             // 
             // label6
             // 
@@ -226,27 +233,27 @@
             this.label16.TabIndex = 75;
             this.label16.Text = "Km:";
             // 
-            // tModel
+            // lModel
             // 
-            this.tModel.AutoSize = true;
-            this.tModel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tModel.ForeColor = System.Drawing.Color.White;
-            this.tModel.Location = new System.Drawing.Point(111, 85);
-            this.tModel.Name = "tModel";
-            this.tModel.Size = new System.Drawing.Size(22, 21);
-            this.tModel.TabIndex = 66;
-            this.tModel.Text = "...";
+            this.lModel.AutoSize = true;
+            this.lModel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lModel.ForeColor = System.Drawing.Color.White;
+            this.lModel.Location = new System.Drawing.Point(111, 85);
+            this.lModel.Name = "lModel";
+            this.lModel.Size = new System.Drawing.Size(22, 21);
+            this.lModel.TabIndex = 66;
+            this.lModel.Text = "...";
             // 
-            // tGunluk
+            // lGunluk
             // 
-            this.tGunluk.AutoSize = true;
-            this.tGunluk.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tGunluk.ForeColor = System.Drawing.Color.White;
-            this.tGunluk.Location = new System.Drawing.Point(111, 230);
-            this.tGunluk.Name = "tGunluk";
-            this.tGunluk.Size = new System.Drawing.Size(22, 21);
-            this.tGunluk.TabIndex = 74;
-            this.tGunluk.Text = "...";
+            this.lGunluk.AutoSize = true;
+            this.lGunluk.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lGunluk.ForeColor = System.Drawing.Color.White;
+            this.lGunluk.Location = new System.Drawing.Point(111, 230);
+            this.lGunluk.Name = "lGunluk";
+            this.lGunluk.Size = new System.Drawing.Size(22, 21);
+            this.lGunluk.TabIndex = 74;
+            this.lGunluk.Text = "...";
             // 
             // label12
             // 
@@ -270,27 +277,27 @@
             this.label14.TabIndex = 73;
             this.label14.Text = "Günlük:";
             // 
-            // tYil
+            // lYil
             // 
-            this.tYil.AutoSize = true;
-            this.tYil.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tYil.ForeColor = System.Drawing.Color.White;
-            this.tYil.Location = new System.Drawing.Point(111, 119);
-            this.tYil.Name = "tYil";
-            this.tYil.Size = new System.Drawing.Size(22, 21);
-            this.tYil.TabIndex = 68;
-            this.tYil.Text = "...";
+            this.lYil.AutoSize = true;
+            this.lYil.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lYil.ForeColor = System.Drawing.Color.White;
+            this.lYil.Location = new System.Drawing.Point(111, 119);
+            this.lYil.Name = "lYil";
+            this.lYil.Size = new System.Drawing.Size(22, 21);
+            this.lYil.TabIndex = 68;
+            this.lYil.Text = "...";
             // 
-            // tYakitTipi
+            // lYakitTipi
             // 
-            this.tYakitTipi.AutoSize = true;
-            this.tYakitTipi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tYakitTipi.ForeColor = System.Drawing.Color.White;
-            this.tYakitTipi.Location = new System.Drawing.Point(111, 192);
-            this.tYakitTipi.Name = "tYakitTipi";
-            this.tYakitTipi.Size = new System.Drawing.Size(22, 21);
-            this.tYakitTipi.TabIndex = 72;
-            this.tYakitTipi.Text = "...";
+            this.lYakitTipi.AutoSize = true;
+            this.lYakitTipi.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lYakitTipi.ForeColor = System.Drawing.Color.White;
+            this.lYakitTipi.Location = new System.Drawing.Point(111, 192);
+            this.lYakitTipi.Name = "lYakitTipi";
+            this.lYakitTipi.Size = new System.Drawing.Size(22, 21);
+            this.lYakitTipi.TabIndex = 72;
+            this.lYakitTipi.Text = "...";
             // 
             // label10
             // 
@@ -314,16 +321,16 @@
             this.label8.TabIndex = 71;
             this.label8.Text = "Yakıt Tipi:";
             // 
-            // tRenk
+            // lRenk
             // 
-            this.tRenk.AutoSize = true;
-            this.tRenk.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tRenk.ForeColor = System.Drawing.Color.White;
-            this.tRenk.Location = new System.Drawing.Point(111, 154);
-            this.tRenk.Name = "tRenk";
-            this.tRenk.Size = new System.Drawing.Size(22, 21);
-            this.tRenk.TabIndex = 70;
-            this.tRenk.Text = "...";
+            this.lRenk.AutoSize = true;
+            this.lRenk.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lRenk.ForeColor = System.Drawing.Color.White;
+            this.lRenk.Location = new System.Drawing.Point(111, 154);
+            this.lRenk.Name = "lRenk";
+            this.lRenk.Size = new System.Drawing.Size(22, 21);
+            this.lRenk.TabIndex = 70;
+            this.lRenk.Text = "...";
             // 
             // pcboxCar
             // 
@@ -369,7 +376,7 @@
             this.gridCarList.ReadOnly = true;
             this.gridCarList.RowHeadersVisible = false;
             this.gridCarList.RowHeadersWidth = 51;
-            this.gridCarList.Size = new System.Drawing.Size(787, 582);
+            this.gridCarList.Size = new System.Drawing.Size(787, 513);
             this.gridCarList.TabIndex = 1;
             this.gridCarList.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
             this.gridCarList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));
@@ -395,6 +402,59 @@
             this.gridCarList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             this.gridCarList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCarList_CellDoubleClick);
             // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.tSearchPlate);
+            this.splitContainer2.Panel1.Controls.Add(this.label2);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.gridCarList);
+            this.splitContainer2.Size = new System.Drawing.Size(787, 582);
+            this.splitContainer2.SplitterDistance = 65;
+            this.splitContainer2.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(26, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 17);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Plaka:";
+            // 
+            // tSearchPlate
+            // 
+            this.tSearchPlate.AutoRoundedCorners = true;
+            this.tSearchPlate.BorderThickness = 0;
+            this.tSearchPlate.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tSearchPlate.DefaultText = "";
+            this.tSearchPlate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tSearchPlate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tSearchPlate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tSearchPlate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tSearchPlate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tSearchPlate.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.tSearchPlate.ForeColor = System.Drawing.Color.Black;
+            this.tSearchPlate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tSearchPlate.Location = new System.Drawing.Point(73, 26);
+            this.tSearchPlate.Name = "tSearchPlate";
+            this.tSearchPlate.PlaceholderText = "";
+            this.tSearchPlate.SelectedText = "";
+            this.tSearchPlate.Size = new System.Drawing.Size(166, 22);
+            this.tSearchPlate.TabIndex = 19;
+            this.tSearchPlate.TextChanged += new System.EventHandler(this.tSearchPlate_TextChanged);
+            // 
             // FrmShortCarList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -416,6 +476,11 @@
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcboxCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCarList)).EndInit();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -426,24 +491,27 @@
         private Guna.UI2.WinForms.Guna2DataGridView gridCarList;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox pcboxCar;
-        private System.Windows.Forms.Label tKm;
+        private System.Windows.Forms.Label lKm;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label tGunluk;
+        private System.Windows.Forms.Label lGunluk;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label tYakitTipi;
+        private System.Windows.Forms.Label lYakitTipi;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label tRenk;
+        private System.Windows.Forms.Label lRenk;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label tYil;
+        private System.Windows.Forms.Label lYil;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label tModel;
+        private System.Windows.Forms.Label lModel;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label tMarka;
+        private System.Windows.Forms.Label lMarka;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label tPlaka;
-        private System.Windows.Forms.Label tSansizman;
+        private System.Windows.Forms.Label lPlaka;
+        private System.Windows.Forms.Label lSansizman;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Button bSelect;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2TextBox tSearchPlate;
     }
 }

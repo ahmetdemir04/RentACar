@@ -18,14 +18,71 @@ namespace RentACar
             InitializeComponent();
         }
         MainFunctions mainFunctions = new MainFunctions();
+        ClsConnection con = new ClsConnection();
+        ClsControlHelper cHelper = new ClsControlHelper();
+        
+        private void BringAllSales()
+        {
+            string qry_all_sales = "Exec ListAllRents";
+            SqlDataAdapter adp = new SqlDataAdapter(qry_all_sales, con.Connection());
+            gridSales.DataSource = mainFunctions.Listele(adp, qry_all_sales);
+        }
         private void FrmSales_Load(object sender, EventArgs e)
         {
-            string query = "select * from Tblsatis";
-            SqlDataAdapter adp = new SqlDataAdapter();
-            gridSales.DataSource = mainFunctions.Listele(adp, query);
+
+            gridSales.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Regular);
+            gridSales.DefaultCellStyle.Font = new Font("Segoe UI", 12, FontStyle.Regular);
+            
+            BringAllSales();
+            cHelper.DatagridFormatter(gridSales);
+            gridSales.Columns["KiralamaID"].Visible = false; 
+        }
+
+        private void bFilter_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime ds = dtStart.Value; // Tarih başlangıcı
+                DateTime de = dtEnd.Value; // Tarih bitişi
+
+                if ( ds > de)
+                {
+                    cHelper.Gmessagebox("Lütfen başlangıç tarihinden büyük bir bitiş tarihi seçiniz.", "Rent A Car", "Warning");
+                    return;
+                }
 
 
-            mainFunctions.SatisHesapla(label10);
+                string query = "Exec ListAllRentsBetween @DS = @ds, @DE = @de";
+                using (SqlDataAdapter adp = new SqlDataAdapter(query, con.Connection()))
+                {
+
+                    DataTable dt  = new DataTable();
+
+                    adp.SelectCommand.Parameters.Add("@ds", SqlDbType.DateTime).Value = ds;
+                    adp.SelectCommand.Parameters.Add("@de", SqlDbType.DateTime).Value = de;
+           
+                    adp.Fill(dt);
+                    gridSales.DataSource = dt;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Rent A Car", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally { con.Connection().Close(); }
+        }
+
+        private void gridSales_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int? id = Convert.ToInt32(gridSales.CurrentRow.Cells["OdemeID"].Value);
+
+            if (id != null)
+            {
+                FrmSaleDetail fSalesDetail = new FrmSaleDetail();   
+                fSalesDetail.OdemeID = id;
+                fSalesDetail.ShowDialog();
+            }
         }
     }
 }

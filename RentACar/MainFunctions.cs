@@ -115,7 +115,7 @@ namespace RentACar
                     if (dr.Read().ToString() == _searchedValue)
                         return false;
                 }
-            
+
                 return true;
             }
             catch (Exception ex)
@@ -124,7 +124,48 @@ namespace RentACar
                 return false;
             }
         }
+        public List<string> Dashboard()
+        {
+            List<string> DashboardLists = new List<string>();
+            try
+            {
+                string qry_cars = "SELECT COUNT(*) FROM TblArac";
+                using (SqlCommand cmd_cars = new SqlCommand(qry_cars, con.Connection()))
+                {
+                    DashboardLists.Add(cmd_cars.ExecuteScalar().ToString());
+                }
 
+                string qry_musteri = "SELECT COUNT(*) FROM TblMusteri";
+                using (SqlCommand cmd_musteri = new SqlCommand(qry_musteri, con.Connection()))
+                {
+                    DashboardLists.Add(cmd_musteri.ExecuteScalar().ToString());
+                }
+
+                string qry_sozlesme = "SELECT  COUNT(*) FROM TblKiralama WHERE GeriDonusDurumu = 1";
+                using (SqlCommand cmd_sozlesme = new SqlCommand(qry_sozlesme, con.Connection()))
+                {
+                    DashboardLists.Add(cmd_sozlesme.ExecuteScalar().ToString());
+                }
+
+                string qry_odemeler = "SELECT  COUNT(*) FROM TblOdemeler";
+                using (SqlCommand cmd_odemeler = new SqlCommand(qry_odemeler, con.Connection()))
+                {
+                    DashboardLists.Add(cmd_odemeler.ExecuteScalar().ToString());
+                }
+                return DashboardLists;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+                throw;
+            }
+
+
+
+
+        }
         public void Bos_Araclar(ComboBox _cmb, string _qry)
         {
             try

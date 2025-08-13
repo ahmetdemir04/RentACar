@@ -96,13 +96,14 @@ namespace RentACar
                             dgv.Columns[i].DefaultCellStyle.Format = "C2"; break;
                         case "Resim":
                             dgv.Columns[i].Visible = false; break;
-                        case "Aktif":
+                        case "Aktif": 
                             dgv.Columns[i].Visible = false; break;
                         case "Km":
                             dgv.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
                             dgv.Columns[i].DefaultCellStyle.Format = "N0"; break; //
                         case "BaslangicTarihi":
-                            dgv.Columns[i].HeaderText = "Başlangıc Tarihi"; break;
+                            dgv.Columns[i].HeaderText = "Başlangıc Tarihi";
+                            dgv.Columns["BaslangicTarihi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;break;
                         case "BitisTarihi":
                             dgv.Columns[i].HeaderText = "Bitiş Tarihi"; break;
                         case "TotalPrice":
@@ -112,14 +113,36 @@ namespace RentACar
                         case "OdemeDurumu":
                             dgv.Columns[i].HeaderText = "Ödeme Durumu"; break;
                         case "GeriDonusDurumu":
-                            dgv.Columns[i].HeaderText = "Geri Dönüş Durumu"; break;
+                            dgv.Columns[i].HeaderText = "Geri Dönüş Durumu";
+                            dgv.Columns["GeriDonusDurumu"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells; break;
                         case "ArabaID":
                             dgv.Columns[i].Visible = false; break;
+                        case "Tutar":
+                            dgv.Columns[i].HeaderText = "Toplam Ücret";
+                            dgv.Columns[i].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                            dgv.Columns["Tutar"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                            dgv.Columns[i].DefaultCellStyle.Format = "C2"; break;
+                        case "OdemeTarihi":
+                            dgv.Columns[i].HeaderText = "Ödeme Tarihi";
+                            dgv.Columns["OdemeTarihi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells; break;
+                        case "OdemeYontemi":
+                            dgv.Columns[i].HeaderText = "Ödeme Yöntemi";
+                            dgv.Columns["OdemeYontemi"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells; break;
+                        case "OdemeID":
+                            dgv.Columns[i].HeaderText = "ID";
+                            dgv.Columns["OdemeID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells; break;
+                        case "Plaka":
+                            dgv.Columns["Plaka"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells; break;
+                        case "KiraID":
+                            dgv.Columns["KiraID"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells; break;
                     }
                 }
             }
         }
+        public void MakeIt0(EventArgs e)
+        {
 
+        }
         public double MakeDouble(string value )
         {
             try
