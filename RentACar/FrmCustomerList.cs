@@ -100,7 +100,7 @@ namespace RentACar
             tAdres.Text = satir.Cells["Adres"].Value.ToString();
             tLisansNumarasi.Text = satir.Cells["LisansNumarasi"].Value.ToString();
             DtDogumTarihi.Value = DateTime.Parse(satir.Cells["DogumTarihi"].Value.ToString());
-            DtTarih.Value = DateTime.Parse(satir.Cells["GirisTarihi"].Value.ToString());
+            DtTarih.Value = DateTime.Parse(satir.Cells["EhliyetinVerildigiTarih"].Value.ToString());
         }
 
         private void bUpdate_Click(object sender, EventArgs e)

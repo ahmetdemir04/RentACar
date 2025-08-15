@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.bExit = new Guna.UI2.WinForms.Guna2Button();
@@ -41,6 +38,7 @@
             this.bListCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.bAddCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.lBitmisSozelesme = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -57,7 +55,12 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lArabaSayisi = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
+            this.cartesianChart2 = new LiveCharts.WinForms.CartesianChart();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -71,7 +74,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.guna2Panel6.SuspendLayout();
+            this.guna2Panel7.SuspendLayout();
+            this.guna2Panel8.SuspendLayout();
+            this.guna2Panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -96,8 +102,8 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.splitContainer1.Panel2.Controls.Add(this.guna2Panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1183, 569);
-            this.splitContainer1.SplitterDistance = 88;
+            this.splitContainer1.Size = new System.Drawing.Size(1183, 615);
+            this.splitContainer1.SplitterDistance = 95;
             this.splitContainer1.TabIndex = 0;
             // 
             // bExit
@@ -270,7 +276,9 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.chart1);
+            this.guna2Panel1.Controls.Add(this.label2);
+            this.guna2Panel1.Controls.Add(this.cartesianChart2);
+            this.guna2Panel1.Controls.Add(this.cartesianChart1);
             this.guna2Panel1.Controls.Add(this.guna2Panel5);
             this.guna2Panel1.Controls.Add(this.guna2Panel4);
             this.guna2Panel1.Controls.Add(this.guna2Panel3);
@@ -278,13 +286,21 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1183, 477);
+            this.guna2Panel1.Size = new System.Drawing.Size(1183, 516);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // cartesianChart1
+            // 
+            this.cartesianChart1.Location = new System.Drawing.Point(72, 197);
+            this.cartesianChart1.Name = "cartesianChart1";
+            this.cartesianChart1.Size = new System.Drawing.Size(503, 300);
+            this.cartesianChart1.TabIndex = 6;
+            this.cartesianChart1.Text = "cartesianChart1";
             // 
             // guna2Panel5
             // 
             this.guna2Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(55)))), ((int)(((byte)(75)))));
-            this.guna2Panel5.Controls.Add(this.lBitmisSozelesme);
+            this.guna2Panel5.Controls.Add(this.guna2Panel9);
             this.guna2Panel5.Controls.Add(this.label8);
             this.guna2Panel5.Controls.Add(this.guna2PictureBox4);
             this.guna2Panel5.Location = new System.Drawing.Point(857, 21);
@@ -295,10 +311,10 @@
             // lBitmisSozelesme
             // 
             this.lBitmisSozelesme.AutoSize = true;
-            this.lBitmisSozelesme.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lBitmisSozelesme.Location = new System.Drawing.Point(62, 59);
+            this.lBitmisSozelesme.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBitmisSozelesme.Location = new System.Drawing.Point(42, 9);
             this.lBitmisSozelesme.Name = "lBitmisSozelesme";
-            this.lBitmisSozelesme.Size = new System.Drawing.Size(22, 25);
+            this.lBitmisSozelesme.Size = new System.Drawing.Size(23, 25);
             this.lBitmisSozelesme.TabIndex = 9;
             this.lBitmisSozelesme.Text = "0";
             // 
@@ -326,7 +342,7 @@
             // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(85)))));
-            this.guna2Panel4.Controls.Add(this.lSozlesme);
+            this.guna2Panel4.Controls.Add(this.guna2Panel8);
             this.guna2Panel4.Controls.Add(this.guna2PictureBox2);
             this.guna2Panel4.Controls.Add(this.label4);
             this.guna2Panel4.Location = new System.Drawing.Point(595, 21);
@@ -337,10 +353,10 @@
             // lSozlesme
             // 
             this.lSozlesme.AutoSize = true;
-            this.lSozlesme.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lSozlesme.Location = new System.Drawing.Point(64, 59);
+            this.lSozlesme.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lSozlesme.Location = new System.Drawing.Point(41, 9);
             this.lSozlesme.Name = "lSozlesme";
-            this.lSozlesme.Size = new System.Drawing.Size(22, 25);
+            this.lSozlesme.Size = new System.Drawing.Size(23, 25);
             this.lSozlesme.TabIndex = 7;
             this.lSozlesme.Text = "0";
             // 
@@ -368,7 +384,7 @@
             // guna2Panel3
             // 
             this.guna2Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            this.guna2Panel3.Controls.Add(this.lMusteriSayisi);
+            this.guna2Panel3.Controls.Add(this.guna2Panel7);
             this.guna2Panel3.Controls.Add(this.guna2PictureBox3);
             this.guna2Panel3.Controls.Add(this.label6);
             this.guna2Panel3.Location = new System.Drawing.Point(330, 21);
@@ -379,10 +395,10 @@
             // lMusteriSayisi
             // 
             this.lMusteriSayisi.AutoSize = true;
-            this.lMusteriSayisi.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lMusteriSayisi.Location = new System.Drawing.Point(66, 59);
+            this.lMusteriSayisi.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lMusteriSayisi.Location = new System.Drawing.Point(36, 9);
             this.lMusteriSayisi.Name = "lMusteriSayisi";
-            this.lMusteriSayisi.Size = new System.Drawing.Size(22, 25);
+            this.lMusteriSayisi.Size = new System.Drawing.Size(23, 25);
             this.lMusteriSayisi.TabIndex = 8;
             this.lMusteriSayisi.Text = "0";
             // 
@@ -410,8 +426,8 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(38)))), ((int)(((byte)(53)))));
+            this.guna2Panel2.Controls.Add(this.guna2Panel6);
             this.guna2Panel2.Controls.Add(this.guna2PictureBox1);
-            this.guna2Panel2.Controls.Add(this.lArabaSayisi);
             this.guna2Panel2.Controls.Add(this.label1);
             this.guna2Panel2.Location = new System.Drawing.Point(72, 21);
             this.guna2Panel2.Name = "guna2Panel2";
@@ -432,10 +448,10 @@
             // lArabaSayisi
             // 
             this.lArabaSayisi.AutoSize = true;
-            this.lArabaSayisi.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lArabaSayisi.Location = new System.Drawing.Point(63, 59);
+            this.lArabaSayisi.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lArabaSayisi.Location = new System.Drawing.Point(38, 9);
             this.lArabaSayisi.Name = "lArabaSayisi";
-            this.lArabaSayisi.Size = new System.Drawing.Size(22, 25);
+            this.lArabaSayisi.Size = new System.Drawing.Size(23, 25);
             this.lArabaSayisi.TabIndex = 5;
             this.lArabaSayisi.Text = "0";
             // 
@@ -449,21 +465,55 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Araba Sayısı";
             // 
-            // chart1
+            // guna2Panel6
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(72, 182);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(300, 300);
-            this.chart1.TabIndex = 4;
-            this.chart1.Text = "chart1";
+            this.guna2Panel6.Controls.Add(this.lArabaSayisi);
+            this.guna2Panel6.Location = new System.Drawing.Point(23, 54);
+            this.guna2Panel6.Name = "guna2Panel6";
+            this.guna2Panel6.Size = new System.Drawing.Size(99, 45);
+            this.guna2Panel6.TabIndex = 6;
+            // 
+            // guna2Panel7
+            // 
+            this.guna2Panel7.Controls.Add(this.lMusteriSayisi);
+            this.guna2Panel7.Location = new System.Drawing.Point(26, 54);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.Size = new System.Drawing.Size(99, 45);
+            this.guna2Panel7.TabIndex = 9;
+            // 
+            // guna2Panel8
+            // 
+            this.guna2Panel8.Controls.Add(this.lSozlesme);
+            this.guna2Panel8.Location = new System.Drawing.Point(35, 54);
+            this.guna2Panel8.Name = "guna2Panel8";
+            this.guna2Panel8.Size = new System.Drawing.Size(99, 45);
+            this.guna2Panel8.TabIndex = 8;
+            // 
+            // guna2Panel9
+            // 
+            this.guna2Panel9.Controls.Add(this.lBitmisSozelesme);
+            this.guna2Panel9.Location = new System.Drawing.Point(26, 54);
+            this.guna2Panel9.Name = "guna2Panel9";
+            this.guna2Panel9.Size = new System.Drawing.Size(99, 45);
+            this.guna2Panel9.TabIndex = 10;
+            // 
+            // cartesianChart2
+            // 
+            this.cartesianChart2.Location = new System.Drawing.Point(595, 197);
+            this.cartesianChart2.Name = "cartesianChart2";
+            this.cartesianChart2.Size = new System.Drawing.Size(507, 300);
+            this.cartesianChart2.TabIndex = 7;
+            this.cartesianChart2.Text = "cartesianChart2";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(287, 169);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 25);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Gelir";
             // 
             // FrmMain
             // 
@@ -471,7 +521,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.ClientSize = new System.Drawing.Size(1183, 569);
+            this.ClientSize = new System.Drawing.Size(1183, 615);
             this.ControlBox = false;
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -488,6 +538,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
+            this.guna2Panel1.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
@@ -500,7 +551,14 @@
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.guna2Panel6.ResumeLayout(false);
+            this.guna2Panel6.PerformLayout();
+            this.guna2Panel7.ResumeLayout(false);
+            this.guna2Panel7.PerformLayout();
+            this.guna2Panel8.ResumeLayout(false);
+            this.guna2Panel8.PerformLayout();
+            this.guna2Panel9.ResumeLayout(false);
+            this.guna2Panel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -532,7 +590,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lSozlesme;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private LiveCharts.WinForms.CartesianChart cartesianChart1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
+        private System.Windows.Forms.Label label2;
+        private LiveCharts.WinForms.CartesianChart cartesianChart2;
     }
 }
 

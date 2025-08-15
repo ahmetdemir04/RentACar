@@ -110,7 +110,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(1343, 685);
-            this.splitContainer1.SplitterDistance = 365;
+            this.splitContainer1.SplitterDistance = 423;
             this.splitContainer1.TabIndex = 0;
             // 
             // ChcDurumu
@@ -150,7 +150,7 @@
             "Elektrikli Araç Şanzımanı"});
             this.CmbSanziman.Location = new System.Drawing.Point(121, 518);
             this.CmbSanziman.Name = "CmbSanziman";
-            this.CmbSanziman.Size = new System.Drawing.Size(215, 26);
+            this.CmbSanziman.Size = new System.Drawing.Size(250, 26);
             this.CmbSanziman.TabIndex = 56;
             // 
             // label10
@@ -177,7 +177,7 @@
             this.bGuncelle.ForeColor = System.Drawing.Color.White;
             this.bGuncelle.Location = new System.Drawing.Point(118, 631);
             this.bGuncelle.Name = "bGuncelle";
-            this.bGuncelle.Size = new System.Drawing.Size(106, 35);
+            this.bGuncelle.Size = new System.Drawing.Size(127, 35);
             this.bGuncelle.TabIndex = 54;
             this.bGuncelle.Text = "Güncelle";
             this.bGuncelle.Click += new System.EventHandler(this.bGuncelle_Click);
@@ -186,7 +186,7 @@
             // 
             this.pcboxCar.BorderRadius = 10;
             this.pcboxCar.ImageRotate = 0F;
-            this.pcboxCar.Location = new System.Drawing.Point(87, 23);
+            this.pcboxCar.Location = new System.Drawing.Point(118, 32);
             this.pcboxCar.Name = "pcboxCar";
             this.pcboxCar.Size = new System.Drawing.Size(195, 198);
             this.pcboxCar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -213,7 +213,7 @@
             "Benzin + Dizel"});
             this.cmbYakit.Location = new System.Drawing.Point(121, 553);
             this.cmbYakit.Name = "cmbYakit";
-            this.cmbYakit.Size = new System.Drawing.Size(215, 26);
+            this.cmbYakit.Size = new System.Drawing.Size(250, 26);
             this.cmbYakit.TabIndex = 52;
             // 
             // tKiraUcreti
@@ -235,7 +235,7 @@
             this.tKiraUcreti.Name = "tKiraUcreti";
             this.tKiraUcreti.PlaceholderText = "";
             this.tKiraUcreti.SelectedText = "";
-            this.tKiraUcreti.Size = new System.Drawing.Size(215, 25);
+            this.tKiraUcreti.Size = new System.Drawing.Size(250, 25);
             this.tKiraUcreti.TabIndex = 41;
             this.tKiraUcreti.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tKiraUcreti.MouseEnter += new System.EventHandler(this.tKiraUcreti_MouseEnter);
@@ -282,7 +282,7 @@
             this.tKm.Name = "tKm";
             this.tKm.PlaceholderText = "";
             this.tKm.SelectedText = "";
-            this.tKm.Size = new System.Drawing.Size(218, 26);
+            this.tKm.Size = new System.Drawing.Size(253, 26);
             this.tKm.TabIndex = 40;
             // 
             // label5
@@ -315,7 +315,7 @@
             this.tRenk.Name = "tRenk";
             this.tRenk.PlaceholderText = "";
             this.tRenk.SelectedText = "";
-            this.tRenk.Size = new System.Drawing.Size(215, 26);
+            this.tRenk.Size = new System.Drawing.Size(250, 26);
             this.tRenk.TabIndex = 39;
             // 
             // tModel
@@ -337,7 +337,7 @@
             this.tModel.Name = "tModel";
             this.tModel.PlaceholderText = "";
             this.tModel.SelectedText = "";
-            this.tModel.Size = new System.Drawing.Size(215, 26);
+            this.tModel.Size = new System.Drawing.Size(250, 26);
             this.tModel.TabIndex = 38;
             // 
             // label4
@@ -397,7 +397,7 @@
             this.cmbSeri.ItemHeight = 20;
             this.cmbSeri.Location = new System.Drawing.Point(121, 363);
             this.cmbSeri.Name = "cmbSeri";
-            this.cmbSeri.Size = new System.Drawing.Size(215, 26);
+            this.cmbSeri.Size = new System.Drawing.Size(250, 26);
             this.cmbSeri.TabIndex = 37;
             // 
             // cmbMarka
@@ -413,7 +413,7 @@
             this.cmbMarka.ItemHeight = 20;
             this.cmbMarka.Location = new System.Drawing.Point(121, 324);
             this.cmbMarka.Name = "cmbMarka";
-            this.cmbMarka.Size = new System.Drawing.Size(215, 26);
+            this.cmbMarka.Size = new System.Drawing.Size(250, 26);
             this.cmbMarka.TabIndex = 36;
             this.cmbMarka.SelectedIndexChanged += new System.EventHandler(this.cmbMarka_SelectedIndexChanged);
             // 
@@ -436,7 +436,7 @@
             this.tPlaka.Name = "tPlaka";
             this.tPlaka.PlaceholderText = "";
             this.tPlaka.SelectedText = "";
-            this.tPlaka.Size = new System.Drawing.Size(215, 26);
+            this.tPlaka.Size = new System.Drawing.Size(250, 26);
             this.tPlaka.TabIndex = 35;
             // 
             // label9
@@ -466,7 +466,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.gridCars);
-            this.splitContainer2.Size = new System.Drawing.Size(974, 685);
+            this.splitContainer2.Size = new System.Drawing.Size(916, 685);
             this.splitContainer2.SplitterDistance = 74;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -537,7 +537,7 @@
             this.gridCars.ReadOnly = true;
             this.gridCars.RowHeadersVisible = false;
             this.gridCars.RowHeadersWidth = 51;
-            this.gridCars.Size = new System.Drawing.Size(974, 607);
+            this.gridCars.Size = new System.Drawing.Size(916, 607);
             this.gridCars.TabIndex = 1;
             this.gridCars.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
             this.gridCars.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));

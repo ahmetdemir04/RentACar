@@ -9,6 +9,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Util;
 using System.Windows.Forms;
 
 namespace RentACar
@@ -150,51 +151,54 @@ namespace RentACar
         }
         private void bPay_Click(object sender, EventArgs e)
         {
-        
+            SqlTransaction trans = null;
             try
             {
-                string qry_add_odemeler = "INSERT INTO TblOdemeler (KiralamaID, Tutar, OdemeTarihi, OdemeYontemi, Durum) VALUES (@KiralamaID, @Tutar, @OdemeTarihi, @OdemeYontemi, @Durum)";
-                using (SqlCommand cmd_add_odeme = new SqlCommand(qry_add_odemeler, con.Connection()))
+
+                using (SqlConnection connection = con.Connection())
                 {
-                    cmd_add_odeme.Parameters.AddWithValue("@KiralamaID", KiraID);
-                    cmd_add_odeme.Parameters.AddWithValue("@Tutar", OdenecekTutar);
-                    cmd_add_odeme.Parameters.AddWithValue("@OdemeTarihi", DateTime.Now.ToShortDateString());
-                    cmd_add_odeme.Parameters.AddWithValue("@OdemeYontemi", cmbOdemeTuru.Text);
-                    cmd_add_odeme.Parameters.AddWithValue("@Durum", OdemeDurum);
-                    cmd_add_odeme.ExecuteNonQuery();
+                    trans = connection.BeginTransaction();
+
+                    string qry_add_odemeler = "INSERT INTO TblOdemeler (KiralamaID, Tutar, OdemeTarihi, OdemeYontemi, Durum) VALUES (@KiralamaID, @Tutar, @OdemeTarihi, @OdemeYontemi, @Durum)";
+                    using (SqlCommand cmd_add_odeme = new SqlCommand(qry_add_odemeler, connection, trans))
+                    {
+                        cmd_add_odeme.Parameters.AddWithValue("@KiralamaID", KiraID);
+                        cmd_add_odeme.Parameters.AddWithValue("@Tutar", OdenecekTutar);
+                        cmd_add_odeme.Parameters.Add("@OdemeTarihi", SqlDbType.SmallDateTime).Value = DateTime.Now;
+                        cmd_add_odeme.Parameters.AddWithValue("@OdemeYontemi", cmbOdemeTuru.Text);
+                        cmd_add_odeme.Parameters.AddWithValue("@Durum", OdemeDurum);
+                        cmd_add_odeme.ExecuteNonQuery();
+                    }
+                    string qry_update_kiralama = "UPDATE TblKiralama SET GeriDonusDurumu = @Durum, GercekTeslimTarihi = @GTT WHERE KiraID = @KID";
+                    using (SqlCommand cmd_update_kiralama = new SqlCommand(qry_update_kiralama, connection, trans))
+                    {
+                        cmd_update_kiralama.Parameters.AddWithValue("@Durum", true);
+                        cmd_update_kiralama.Parameters.Add("@GTT", SqlDbType.SmallDateTime).Value = DateTime.Now;
+                        cmd_update_kiralama.Parameters.AddWithValue("@KID", KiraID);
+                        cmd_update_kiralama.ExecuteNonQuery();
+                    }
+
+                    string qry_update_araba = "UPDATE TblArac SET Durum = @Durum WHERE ArabaID = (SELECT ArabaID FROM TblKiralama WHERE KiraID = @KID)";
+                    using (SqlCommand cmd_update_araba = new SqlCommand(qry_update_araba, connection, trans))
+                    {
+                        cmd_update_araba.Parameters.AddWithValue("@Durum", true);
+                        cmd_update_araba.Parameters.AddWithValue("@KID", KiraID);
+                        cmd_update_araba.ExecuteNonQuery();
+                    }
+
+                    cHelper.Gmessagebox("Ödeme işlemi başarılı bir şekilde tamamlandı.", "Rent A Car", "Information").Show();
+                    trans.Commit();
+
+
+                    foreach (Control ctrl in guna2Panel1.Controls) { if (ctrl is Guna2TextBox item) { item.Text = ""; } }
+                    ParaUstu = 0;
+                    FrmContract frmContract = Application.OpenForms["FrmContract"] as FrmContract;
+                    frmContract.BringCarList();
                 }
-                string qry_update_kiralama = "UPDATE TblKiralama SET GeriDonusDurumu = @Durum, GercekTeslimTarihi = @GTT WHERE KiraID = @KID";
-                using (SqlCommand cmd_update_kiralama = new SqlCommand(qry_update_kiralama, con.Connection()))
-                {
-                    cmd_update_kiralama.Parameters.AddWithValue("@Durum", true);
-                    cmd_update_kiralama.Parameters.AddWithValue("@GTT", DateTime.Now.ToShortDateString());
-                    cmd_update_kiralama.Parameters.AddWithValue("@KID", KiraID);
-                    cmd_update_kiralama.ExecuteNonQuery();
-                }
-
-                string qry_update_araba = "UPDATE TblArac SET Durum = @Durum WHERE ArabaID = (SELECT ArabaID FROM TblKiralama WHERE KiraID = @KID)";
-                using (SqlCommand cmd_update_araba = new SqlCommand(qry_update_araba, con.Connection()))
-                {
-                    cmd_update_araba.Parameters.AddWithValue("@Durum", true);
-                    cmd_update_araba.Parameters.AddWithValue("@KID", KiraID);
-                    cmd_update_araba.ExecuteNonQuery();
-                }
-
-                cHelper.Gmessagebox("Ödeme işlemi başarılı bir şekilde tamamlandı.", "Rent A Car", "Information").Show();
-
-
-
-                foreach (Control ctrl in guna2Panel1.Controls) { if (ctrl is Guna2TextBox item) { item.Text = ""; } }
-                ParaUstu = 0;
-                FrmContract frmContract = Application.OpenForms["FrmContract"] as FrmContract;
-                frmContract.BringCarList();
-
-
-
             }
             catch (Exception ex)
             {
-
+                trans.Rollback();
                 MessageBox.Show(ex.ToString());
             }
         }

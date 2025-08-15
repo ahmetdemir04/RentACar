@@ -11,7 +11,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
+using System.Windows.Controls;
 using System.Windows.Forms;
+using System.Windows.Media.Animation;
 
 
 namespace RentACar
@@ -49,7 +51,7 @@ namespace RentACar
             gridCars.Columns["aktif"].Visible = false;
 
         }
-        string img;
+        string imgLocation = "";
 
         private void gridCars_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -61,11 +63,32 @@ namespace RentACar
             tModel.Text = columns.Cells["Yil"].Value.ToString();
             tRenk.Text = columns.Cells["renk"].Value.ToString();
             tKm.Text = columns.Cells["Km"].Value.ToString();
-            CmbSanziman.Text = columns.Cells["Sansizman"].Value.ToString();
             cmbYakit.Text = columns.Cells["YakitTipi"].Value.ToString();
             tKiraUcreti.Text = columns.Cells["GunlukUcret"].Value.ToString();
 
             string durumu = columns.Cells["Durum"].Value.ToString();
+
+            string Sansizman = CmbSanziman.Text = columns.Cells["Sansizman"].Value.ToString();
+
+
+            switch (Sansizman)
+            {
+                case "Manuel":
+                    CmbSanziman.SelectedIndex = 0;
+                    break;
+                case "Otomatik":
+                    CmbSanziman.SelectedIndex = 1;
+                    break;
+                case "Yarı Otomatik":
+                    CmbSanziman.SelectedIndex = 2;
+                    break;
+                case "Elektrikli":
+                    CmbSanziman.SelectedIndex = 3;
+                    break;
+                default:
+                    CmbSanziman.SelectedIndex = -1;
+                    break;
+            }
 
             if (durumu == "True")
             {
@@ -81,7 +104,6 @@ namespace RentACar
             if (File.Exists(imgLocation))
             {
                 pcboxCar.ImageLocation = imgLocation;
-                img = imgLocation;
             }
             else
             {
@@ -151,7 +173,7 @@ namespace RentACar
                 }
                 else
                 {
-                    cmd_upd_car.Parameters.AddWithValue("@resim", img);
+                    cmd_upd_car.Parameters.AddWithValue("@resim", imgLocation);
                 }
 
                 bool worked = mainFunctions.DML(cmd_upd_car, query_upd_car);
