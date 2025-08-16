@@ -139,10 +139,6 @@ namespace RentACar
                 }
             }
         }
-        public void MakeIt0(EventArgs e)
-        {
-
-        }
         public double MakeDouble(string value )
         {
             try

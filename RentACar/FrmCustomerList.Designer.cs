@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCustomerList));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.ChcDurumu = new Guna.UI2.WinForms.Guna2CheckBox();
             this.DtDogumTarihi = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.DtTarih = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -54,12 +55,14 @@
             this.tTC = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.rdAdSoyad = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rdTC = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.tSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.gridCustomer = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.tSearch = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -81,6 +84,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.ChcDurumu);
             this.splitContainer1.Panel1.Controls.Add(this.DtDogumTarihi);
             this.splitContainer1.Panel1.Controls.Add(this.label10);
             this.splitContainer1.Panel1.Controls.Add(this.DtTarih);
@@ -106,22 +110,41 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(1277, 649);
-            this.splitContainer1.SplitterDistance = 402;
+            this.splitContainer1.SplitterDistance = 387;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // ChcDurumu
+            // 
+            this.ChcDurumu.AutoSize = true;
+            this.ChcDurumu.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ChcDurumu.CheckedState.BorderRadius = 0;
+            this.ChcDurumu.CheckedState.BorderThickness = 0;
+            this.ChcDurumu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ChcDurumu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChcDurumu.ForeColor = System.Drawing.Color.White;
+            this.ChcDurumu.Location = new System.Drawing.Point(153, 35);
+            this.ChcDurumu.Name = "ChcDurumu";
+            this.ChcDurumu.Size = new System.Drawing.Size(85, 24);
+            this.ChcDurumu.TabIndex = 58;
+            this.ChcDurumu.Text = "Durumu";
+            this.ChcDurumu.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.ChcDurumu.UncheckedState.BorderRadius = 0;
+            this.ChcDurumu.UncheckedState.BorderThickness = 0;
+            this.ChcDurumu.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
             // DtDogumTarihi
             // 
             this.DtDogumTarihi.BorderRadius = 15;
             this.DtDogumTarihi.Checked = true;
             this.DtDogumTarihi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.DtDogumTarihi.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DtDogumTarihi.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtDogumTarihi.ForeColor = System.Drawing.Color.White;
             this.DtDogumTarihi.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DtDogumTarihi.Location = new System.Drawing.Point(158, 103);
+            this.DtDogumTarihi.Location = new System.Drawing.Point(152, 111);
             this.DtDogumTarihi.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DtDogumTarihi.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DtDogumTarihi.Name = "DtDogumTarihi";
-            this.DtDogumTarihi.Size = new System.Drawing.Size(212, 36);
+            this.DtDogumTarihi.Size = new System.Drawing.Size(222, 34);
             this.DtDogumTarihi.TabIndex = 1;
             this.DtDogumTarihi.Value = new System.DateTime(2025, 7, 31, 0, 10, 41, 907);
             // 
@@ -130,7 +153,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(36, 110);
+            this.label10.Location = new System.Drawing.Point(30, 118);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(118, 21);
             this.label10.TabIndex = 31;
@@ -141,14 +164,14 @@
             this.DtTarih.BorderRadius = 15;
             this.DtTarih.Checked = true;
             this.DtTarih.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.DtTarih.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DtTarih.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtTarih.ForeColor = System.Drawing.Color.White;
             this.DtTarih.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DtTarih.Location = new System.Drawing.Point(155, 147);
+            this.DtTarih.Location = new System.Drawing.Point(149, 155);
             this.DtTarih.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DtTarih.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DtTarih.Name = "DtTarih";
-            this.DtTarih.Size = new System.Drawing.Size(212, 36);
+            this.DtTarih.Size = new System.Drawing.Size(222, 34);
             this.DtTarih.TabIndex = 2;
             this.DtTarih.Value = new System.DateTime(2025, 7, 31, 0, 10, 41, 907);
             // 
@@ -157,7 +180,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(54, 154);
+            this.label9.Location = new System.Drawing.Point(48, 162);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(95, 21);
             this.label9.TabIndex = 28;
@@ -176,12 +199,12 @@
             this.tLisansNumarasi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tLisansNumarasi.ForeColor = System.Drawing.Color.Black;
             this.tLisansNumarasi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tLisansNumarasi.Location = new System.Drawing.Point(155, 69);
+            this.tLisansNumarasi.Location = new System.Drawing.Point(149, 77);
             this.tLisansNumarasi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tLisansNumarasi.Name = "tLisansNumarasi";
             this.tLisansNumarasi.PlaceholderText = "";
             this.tLisansNumarasi.SelectedText = "";
-            this.tLisansNumarasi.Size = new System.Drawing.Size(215, 27);
+            this.tLisansNumarasi.Size = new System.Drawing.Size(225, 25);
             this.tLisansNumarasi.TabIndex = 0;
             // 
             // label8
@@ -189,7 +212,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(16, 70);
+            this.label8.Location = new System.Drawing.Point(10, 78);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(138, 21);
             this.label8.TabIndex = 26;
@@ -208,13 +231,13 @@
             this.tSoyad.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tSoyad.ForeColor = System.Drawing.Color.Black;
             this.tSoyad.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tSoyad.Location = new System.Drawing.Point(155, 295);
+            this.tSoyad.Location = new System.Drawing.Point(149, 303);
             this.tSoyad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tSoyad.MaxLength = 30;
             this.tSoyad.Name = "tSoyad";
             this.tSoyad.PlaceholderText = "";
             this.tSoyad.SelectedText = "";
-            this.tSoyad.Size = new System.Drawing.Size(215, 27);
+            this.tSoyad.Size = new System.Drawing.Size(222, 25);
             this.tSoyad.TabIndex = 5;
             // 
             // label7
@@ -222,7 +245,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(86, 297);
+            this.label7.Location = new System.Drawing.Point(80, 305);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 21);
             this.label7.TabIndex = 24;
@@ -239,9 +262,9 @@
             this.bUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.bUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bUpdate.ForeColor = System.Drawing.Color.White;
-            this.bUpdate.Location = new System.Drawing.Point(95, 592);
+            this.bUpdate.Location = new System.Drawing.Point(89, 600);
             this.bUpdate.Name = "bUpdate";
-            this.bUpdate.Size = new System.Drawing.Size(132, 35);
+            this.bUpdate.Size = new System.Drawing.Size(132, 33);
             this.bUpdate.TabIndex = 9;
             this.bUpdate.Text = "Güncelle";
             this.bUpdate.Click += new System.EventHandler(this.bUpdate_Click);
@@ -257,9 +280,9 @@
             this.bClear.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.bClear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bClear.ForeColor = System.Drawing.Color.White;
-            this.bClear.Location = new System.Drawing.Point(235, 592);
+            this.bClear.Location = new System.Drawing.Point(229, 600);
             this.bClear.Name = "bClear";
-            this.bClear.Size = new System.Drawing.Size(132, 35);
+            this.bClear.Size = new System.Drawing.Size(132, 33);
             this.bClear.TabIndex = 10;
             this.bClear.Text = "Temizle";
             this.bClear.Click += new System.EventHandler(this.bClear_Click);
@@ -277,14 +300,14 @@
             this.tAdres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tAdres.ForeColor = System.Drawing.Color.Black;
             this.tAdres.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tAdres.Location = new System.Drawing.Point(155, 415);
+            this.tAdres.Location = new System.Drawing.Point(149, 423);
             this.tAdres.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tAdres.MaxLength = 300;
+            this.tAdres.MaxLength = 500;
             this.tAdres.Multiline = true;
             this.tAdres.Name = "tAdres";
             this.tAdres.PlaceholderText = "";
             this.tAdres.SelectedText = "";
-            this.tAdres.Size = new System.Drawing.Size(215, 154);
+            this.tAdres.Size = new System.Drawing.Size(222, 152);
             this.tAdres.TabIndex = 8;
             // 
             // label5
@@ -292,7 +315,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(90, 417);
+            this.label5.Location = new System.Drawing.Point(84, 425);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 21);
             this.label5.TabIndex = 20;
@@ -311,13 +334,13 @@
             this.tEposta.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tEposta.ForeColor = System.Drawing.Color.Black;
             this.tEposta.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tEposta.Location = new System.Drawing.Point(155, 375);
+            this.tEposta.Location = new System.Drawing.Point(149, 383);
             this.tEposta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tEposta.MaxLength = 50;
             this.tEposta.Name = "tEposta";
             this.tEposta.PlaceholderText = "";
             this.tEposta.SelectedText = "";
-            this.tEposta.Size = new System.Drawing.Size(215, 27);
+            this.tEposta.Size = new System.Drawing.Size(222, 25);
             this.tEposta.TabIndex = 7;
             // 
             // label4
@@ -325,7 +348,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(76, 378);
+            this.label4.Location = new System.Drawing.Point(70, 386);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 21);
             this.label4.TabIndex = 19;
@@ -344,13 +367,13 @@
             this.tTelefon.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tTelefon.ForeColor = System.Drawing.Color.Black;
             this.tTelefon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tTelefon.Location = new System.Drawing.Point(155, 335);
+            this.tTelefon.Location = new System.Drawing.Point(149, 343);
             this.tTelefon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tTelefon.MaxLength = 10;
             this.tTelefon.Name = "tTelefon";
             this.tTelefon.PlaceholderText = "Başında sıfır olmadan giriniz";
             this.tTelefon.SelectedText = "";
-            this.tTelefon.Size = new System.Drawing.Size(215, 27);
+            this.tTelefon.Size = new System.Drawing.Size(222, 25);
             this.tTelefon.TabIndex = 6;
             // 
             // label3
@@ -358,7 +381,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(76, 337);
+            this.label3.Location = new System.Drawing.Point(70, 345);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 21);
             this.label3.TabIndex = 18;
@@ -377,13 +400,13 @@
             this.tAd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tAd.ForeColor = System.Drawing.Color.Black;
             this.tAd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tAd.Location = new System.Drawing.Point(155, 255);
+            this.tAd.Location = new System.Drawing.Point(149, 263);
             this.tAd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tAd.MaxLength = 20;
             this.tAd.Name = "tAd";
             this.tAd.PlaceholderText = "";
             this.tAd.SelectedText = "";
-            this.tAd.Size = new System.Drawing.Size(215, 27);
+            this.tAd.Size = new System.Drawing.Size(222, 25);
             this.tAd.TabIndex = 4;
             // 
             // label2
@@ -391,7 +414,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(112, 255);
+            this.label2.Location = new System.Drawing.Point(106, 263);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 21);
             this.label2.TabIndex = 15;
@@ -410,13 +433,13 @@
             this.tTC.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tTC.ForeColor = System.Drawing.Color.Black;
             this.tTC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tTC.Location = new System.Drawing.Point(155, 215);
+            this.tTC.Location = new System.Drawing.Point(149, 223);
             this.tTC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tTC.MaxLength = 11;
             this.tTC.Name = "tTC";
             this.tTC.PlaceholderText = "";
             this.tTC.SelectedText = "";
-            this.tTC.Size = new System.Drawing.Size(215, 27);
+            this.tTC.Size = new System.Drawing.Size(222, 25);
             this.tTC.TabIndex = 3;
             // 
             // label1
@@ -424,7 +447,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(103, 217);
+            this.label1.Location = new System.Drawing.Point(97, 225);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 21);
             this.label1.TabIndex = 12;
@@ -440,15 +463,83 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.rdAdSoyad);
+            this.splitContainer2.Panel1.Controls.Add(this.rdTC);
             this.splitContainer2.Panel1.Controls.Add(this.tSearch);
             this.splitContainer2.Panel1.Controls.Add(this.label6);
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.gridCustomer);
-            this.splitContainer2.Size = new System.Drawing.Size(871, 649);
+            this.splitContainer2.Size = new System.Drawing.Size(886, 649);
             this.splitContainer2.SplitterDistance = 64;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // rdAdSoyad
+            // 
+            this.rdAdSoyad.AutoSize = true;
+            this.rdAdSoyad.Checked = true;
+            this.rdAdSoyad.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdAdSoyad.CheckedState.BorderThickness = 0;
+            this.rdAdSoyad.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdAdSoyad.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rdAdSoyad.CheckedState.InnerOffset = -4;
+            this.rdAdSoyad.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.rdAdSoyad.ForeColor = System.Drawing.Color.White;
+            this.rdAdSoyad.Location = new System.Drawing.Point(336, 24);
+            this.rdAdSoyad.Name = "rdAdSoyad";
+            this.rdAdSoyad.Size = new System.Drawing.Size(94, 25);
+            this.rdAdSoyad.TabIndex = 1;
+            this.rdAdSoyad.TabStop = true;
+            this.rdAdSoyad.Text = "Ad Soyad";
+            this.rdAdSoyad.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rdAdSoyad.UncheckedState.BorderThickness = 2;
+            this.rdAdSoyad.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rdAdSoyad.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rdAdSoyad.CheckedChanged += new System.EventHandler(this.ClearSerach);
+            // 
+            // rdTC
+            // 
+            this.rdTC.AutoSize = true;
+            this.rdTC.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdTC.CheckedState.BorderThickness = 0;
+            this.rdTC.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdTC.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rdTC.CheckedState.InnerOffset = -4;
+            this.rdTC.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdTC.ForeColor = System.Drawing.Color.White;
+            this.rdTC.Location = new System.Drawing.Point(436, 24);
+            this.rdTC.Name = "rdTC";
+            this.rdTC.Size = new System.Drawing.Size(45, 25);
+            this.rdTC.TabIndex = 2;
+            this.rdTC.Text = "TC";
+            this.rdTC.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rdTC.UncheckedState.BorderThickness = 2;
+            this.rdTC.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rdTC.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rdTC.CheckedChanged += new System.EventHandler(this.ClearSerach);
+            // 
+            // tSearch
+            // 
+            this.tSearch.BorderRadius = 10;
+            this.tSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tSearch.DefaultText = "";
+            this.tSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tSearch.Location = new System.Drawing.Point(105, 24);
+            this.tSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tSearch.MaxLength = 11;
+            this.tSearch.Name = "tSearch";
+            this.tSearch.PlaceholderText = "";
+            this.tSearch.SelectedText = "";
+            this.tSearch.Size = new System.Drawing.Size(215, 22);
+            this.tSearch.TabIndex = 0;
+            this.tSearch.TextChanged += new System.EventHandler(this.tSearch_TextChanged);
             // 
             // label6
             // 
@@ -494,7 +585,7 @@
             this.gridCustomer.ReadOnly = true;
             this.gridCustomer.RowHeadersVisible = false;
             this.gridCustomer.RowHeadersWidth = 51;
-            this.gridCustomer.Size = new System.Drawing.Size(871, 581);
+            this.gridCustomer.Size = new System.Drawing.Size(886, 581);
             this.gridCustomer.TabIndex = 0;
             this.gridCustomer.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
             this.gridCustomer.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));
@@ -553,28 +644,6 @@
             this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.guna2MessageDialog1.Text = null;
             // 
-            // tSearch
-            // 
-            this.tSearch.BorderRadius = 10;
-            this.tSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tSearch.DefaultText = "";
-            this.tSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.tSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tSearch.Location = new System.Drawing.Point(105, 24);
-            this.tSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tSearch.MaxLength = 11;
-            this.tSearch.Name = "tSearch";
-            this.tSearch.PlaceholderText = "";
-            this.tSearch.SelectedText = "";
-            this.tSearch.Size = new System.Drawing.Size(215, 22);
-            this.tSearch.TabIndex = 0;
-            this.tSearch.TextChanged += new System.EventHandler(this.tSearch_TextChanged);
-            // 
             // FrmCustomerList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -582,6 +651,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1277, 649);
             this.Controls.Add(this.splitContainer1);
+            this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1293, 688);
             this.Name = "FrmCustomerList";
@@ -634,5 +704,8 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker DtDogumTarihi;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2TextBox tSearch;
+        private Guna.UI2.WinForms.Guna2CheckBox ChcDurumu;
+        private Guna.UI2.WinForms.Guna2RadioButton rdAdSoyad;
+        private Guna.UI2.WinForms.Guna2RadioButton rdTC;
     }
 }

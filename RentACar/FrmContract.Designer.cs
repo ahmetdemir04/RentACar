@@ -68,7 +68,6 @@
             this.txtSozlesmeAra = new Guna.UI2.WinForms.Guna2TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2Separator3 = new Guna.UI2.WinForms.Guna2Separator();
-            this.bContractUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -340,7 +339,6 @@
             this.txtTC.SelectedText = "";
             this.txtTC.Size = new System.Drawing.Size(215, 22);
             this.txtTC.TabIndex = 0;
-            this.txtTC.TextChanged += new System.EventHandler(this.txtTC_TextChanged);
             this.txtTC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTC_KeyDown);
             // 
             // label6
@@ -398,7 +396,7 @@
             this.bTemizle.Location = new System.Drawing.Point(653, 138);
             this.bTemizle.Name = "bTemizle";
             this.bTemizle.Size = new System.Drawing.Size(167, 30);
-            this.bTemizle.TabIndex = 6;
+            this.bTemizle.TabIndex = 5;
             this.bTemizle.Text = "Temizle";
             this.bTemizle.Click += new System.EventHandler(this.bTemizle_Click);
             // 
@@ -416,7 +414,7 @@
             this.bContractAdd.Location = new System.Drawing.Point(653, 105);
             this.bContractAdd.Name = "bContractAdd";
             this.bContractAdd.Size = new System.Drawing.Size(167, 27);
-            this.bContractAdd.TabIndex = 5;
+            this.bContractAdd.TabIndex = 4;
             this.bContractAdd.Text = "Sözleşme Ekle";
             this.bContractAdd.Click += new System.EventHandler(this.bContractAdd_Click);
             // 
@@ -434,7 +432,7 @@
             this.bCalculate.Location = new System.Drawing.Point(388, 232);
             this.bCalculate.Name = "bCalculate";
             this.bCalculate.Size = new System.Drawing.Size(122, 26);
-            this.bCalculate.TabIndex = 4;
+            this.bCalculate.TabIndex = 3;
             this.bCalculate.Text = "Hesapla";
             this.bCalculate.Click += new System.EventHandler(this.bCalculate_Click);
             // 
@@ -587,7 +585,6 @@
             this.splitContainer3.Panel2.Controls.Add(this.txtSozlesmeAra);
             this.splitContainer3.Panel2.Controls.Add(this.label8);
             this.splitContainer3.Panel2.Controls.Add(this.guna2Separator3);
-            this.splitContainer3.Panel2.Controls.Add(this.bContractUpdate);
             this.splitContainer3.Size = new System.Drawing.Size(1255, 432);
             this.splitContainer3.SplitterDistance = 361;
             this.splitContainer3.TabIndex = 0;
@@ -690,24 +687,6 @@
             this.guna2Separator3.Size = new System.Drawing.Size(1249, 10);
             this.guna2Separator3.TabIndex = 0;
             // 
-            // bContractUpdate
-            // 
-            this.bContractUpdate.AutoRoundedCorners = true;
-            this.bContractUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.bContractUpdate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.bContractUpdate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.bContractUpdate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.bContractUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.bContractUpdate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
-            this.bContractUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bContractUpdate.ForeColor = System.Drawing.Color.White;
-            this.bContractUpdate.Location = new System.Drawing.Point(1066, 31);
-            this.bContractUpdate.Name = "bContractUpdate";
-            this.bContractUpdate.Size = new System.Drawing.Size(167, 24);
-            this.bContractUpdate.TabIndex = 53;
-            this.bContractUpdate.Text = "Sözleşme Güncelle";
-            this.bContractUpdate.Click += new System.EventHandler(this.bContractUpdate_Click);
-            // 
             // guna2MessageDialog1
             // 
             this.guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
@@ -721,12 +700,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1255, 729);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1271, 768);
             this.Name = "FrmContract";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmContract";
@@ -781,7 +763,6 @@
         private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator3;
-        private Guna.UI2.WinForms.Guna2Button bContractUpdate;
         private Guna.UI2.WinForms.Guna2Button bContractAdd;
         private Guna.UI2.WinForms.Guna2ComboBox cmbArac;
         private Guna.UI2.WinForms.Guna2Button bCalculate;

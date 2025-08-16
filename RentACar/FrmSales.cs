@@ -17,7 +17,7 @@ namespace RentACar
         {
             InitializeComponent();
         }
-        MainFunctions mainFunctions = new MainFunctions();
+        ClsMainFunctions mainFunctions = new ClsMainFunctions();
         ClsConnection con = new ClsConnection();
         ClsControlHelper cHelper = new ClsControlHelper();
         
@@ -82,6 +82,28 @@ namespace RentACar
                 FrmSaleDetail fSalesDetail = new FrmSaleDetail();   
                 fSalesDetail.OdemeID = id;
                 fSalesDetail.ShowDialog();
+            }
+        }
+
+        private void tSearch_TextChanged(object sender, EventArgs e)
+        {
+            DataTable dt = (DataTable)gridSales.DataSource;
+
+            if (dt != null)
+            {
+                if (rdPlaka.Checked == Enabled)
+                {
+                    dt.DefaultView.RowFilter = string.Format("Plaka LIKE '%{0}%'", tSearch.Text);
+                }
+                else if (rdAdSoyad.Checked == Enabled)
+                {
+                    dt.DefaultView.RowFilter = string.Format("[Ad Soyad] LIKE '%{0}%'", tSearch.Text);
+                }
+                else
+                {
+                    cHelper.Gmessagebox("Lütfen bir filtre seçiniz.", "Rent A Car", "Warning");
+                }
+
             }
         }
     }

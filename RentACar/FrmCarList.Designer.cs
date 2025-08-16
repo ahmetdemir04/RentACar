@@ -144,14 +144,14 @@
             this.CmbSanziman.ForeColor = System.Drawing.Color.Black;
             this.CmbSanziman.ItemHeight = 20;
             this.CmbSanziman.Items.AddRange(new object[] {
-            "Manuel Şanzıman (Düz Vites)",
-            "Otomatik Şanzıman",
-            "Yarı Otomatik Şanzıman",
-            "Elektrikli Araç Şanzımanı"});
+            "Manuel",
+            "Otomatik",
+            "Yarı Otomatik",
+            "Elektrikli"});
             this.CmbSanziman.Location = new System.Drawing.Point(121, 518);
             this.CmbSanziman.Name = "CmbSanziman";
             this.CmbSanziman.Size = new System.Drawing.Size(250, 26);
-            this.CmbSanziman.TabIndex = 56;
+            this.CmbSanziman.TabIndex = 6;
             // 
             // label10
             // 
@@ -178,7 +178,7 @@
             this.bGuncelle.Location = new System.Drawing.Point(118, 631);
             this.bGuncelle.Name = "bGuncelle";
             this.bGuncelle.Size = new System.Drawing.Size(127, 35);
-            this.bGuncelle.TabIndex = 54;
+            this.bGuncelle.TabIndex = 9;
             this.bGuncelle.Text = "Güncelle";
             this.bGuncelle.Click += new System.EventHandler(this.bGuncelle_Click);
             // 
@@ -214,7 +214,7 @@
             this.cmbYakit.Location = new System.Drawing.Point(121, 553);
             this.cmbYakit.Name = "cmbYakit";
             this.cmbYakit.Size = new System.Drawing.Size(250, 26);
-            this.cmbYakit.TabIndex = 52;
+            this.cmbYakit.TabIndex = 7;
             // 
             // tKiraUcreti
             // 
@@ -236,7 +236,7 @@
             this.tKiraUcreti.PlaceholderText = "";
             this.tKiraUcreti.SelectedText = "";
             this.tKiraUcreti.Size = new System.Drawing.Size(250, 25);
-            this.tKiraUcreti.TabIndex = 41;
+            this.tKiraUcreti.TabIndex = 8;
             this.tKiraUcreti.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tKiraUcreti.MouseEnter += new System.EventHandler(this.tKiraUcreti_MouseEnter);
             this.tKiraUcreti.MouseLeave += new System.EventHandler(this.tKiraUcreti_MouseLeave);
@@ -283,7 +283,7 @@
             this.tKm.PlaceholderText = "";
             this.tKm.SelectedText = "";
             this.tKm.Size = new System.Drawing.Size(253, 26);
-            this.tKm.TabIndex = 40;
+            this.tKm.TabIndex = 5;
             // 
             // label5
             // 
@@ -316,7 +316,7 @@
             this.tRenk.PlaceholderText = "";
             this.tRenk.SelectedText = "";
             this.tRenk.Size = new System.Drawing.Size(250, 26);
-            this.tRenk.TabIndex = 39;
+            this.tRenk.TabIndex = 4;
             // 
             // tModel
             // 
@@ -338,7 +338,7 @@
             this.tModel.PlaceholderText = "";
             this.tModel.SelectedText = "";
             this.tModel.Size = new System.Drawing.Size(250, 26);
-            this.tModel.TabIndex = 38;
+            this.tModel.TabIndex = 3;
             // 
             // label4
             // 
@@ -398,7 +398,7 @@
             this.cmbSeri.Location = new System.Drawing.Point(121, 363);
             this.cmbSeri.Name = "cmbSeri";
             this.cmbSeri.Size = new System.Drawing.Size(250, 26);
-            this.cmbSeri.TabIndex = 37;
+            this.cmbSeri.TabIndex = 2;
             // 
             // cmbMarka
             // 
@@ -414,7 +414,7 @@
             this.cmbMarka.Location = new System.Drawing.Point(121, 324);
             this.cmbMarka.Name = "cmbMarka";
             this.cmbMarka.Size = new System.Drawing.Size(250, 26);
-            this.cmbMarka.TabIndex = 36;
+            this.cmbMarka.TabIndex = 1;
             this.cmbMarka.SelectedIndexChanged += new System.EventHandler(this.cmbMarka_SelectedIndexChanged);
             // 
             // tPlaka
@@ -437,7 +437,7 @@
             this.tPlaka.PlaceholderText = "";
             this.tPlaka.SelectedText = "";
             this.tPlaka.Size = new System.Drawing.Size(250, 26);
-            this.tPlaka.TabIndex = 35;
+            this.tPlaka.TabIndex = 0;
             // 
             // label9
             // 
@@ -489,7 +489,7 @@
             this.tSearch.PlaceholderText = "";
             this.tSearch.SelectedText = "";
             this.tSearch.Size = new System.Drawing.Size(215, 22);
-            this.tSearch.TabIndex = 15;
+            this.tSearch.TabIndex = 0;
             this.tSearch.TextChanged += new System.EventHandler(this.tSearch_TextChanged);
             // 
             // label6

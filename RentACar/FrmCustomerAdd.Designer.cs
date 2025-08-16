@@ -50,6 +50,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.tSoyad = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cmbIl = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -57,7 +59,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(97, 187);
+            this.label1.Location = new System.Drawing.Point(131, 243);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 21);
             this.label1.TabIndex = 0;
@@ -76,14 +78,14 @@
             this.tTC.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tTC.ForeColor = System.Drawing.Color.Black;
             this.tTC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tTC.Location = new System.Drawing.Point(153, 185);
+            this.tTC.Location = new System.Drawing.Point(187, 241);
             this.tTC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tTC.MaxLength = 11;
             this.tTC.Name = "tTC";
             this.tTC.PlaceholderText = "";
             this.tTC.SelectedText = "";
             this.tTC.Size = new System.Drawing.Size(270, 27);
-            this.tTC.TabIndex = 3;
+            this.tTC.TabIndex = 4;
             // 
             // tAd
             // 
@@ -98,20 +100,21 @@
             this.tAd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tAd.ForeColor = System.Drawing.Color.Black;
             this.tAd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tAd.Location = new System.Drawing.Point(153, 225);
+            this.tAd.Location = new System.Drawing.Point(187, 281);
             this.tAd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tAd.MaxLength = 20;
             this.tAd.Name = "tAd";
             this.tAd.PlaceholderText = "";
             this.tAd.SelectedText = "";
             this.tAd.Size = new System.Drawing.Size(270, 27);
-            this.tAd.TabIndex = 4;
+            this.tAd.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(106, 231);
+            this.label2.Location = new System.Drawing.Point(140, 287);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 21);
             this.label2.TabIndex = 2;
@@ -130,21 +133,21 @@
             this.tTelefon.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tTelefon.ForeColor = System.Drawing.Color.Black;
             this.tTelefon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tTelefon.Location = new System.Drawing.Point(150, 304);
+            this.tTelefon.Location = new System.Drawing.Point(184, 360);
             this.tTelefon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tTelefon.MaxLength = 10;
             this.tTelefon.Name = "tTelefon";
-            this.tTelefon.PlaceholderText = "";
+            this.tTelefon.PlaceholderText = "Telefon Numarasının Başında 0 olmadan giriniz";
             this.tTelefon.SelectedText = "";
             this.tTelefon.Size = new System.Drawing.Size(273, 27);
-            this.tTelefon.TabIndex = 6;
+            this.tTelefon.TabIndex = 7;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(67, 306);
+            this.label3.Location = new System.Drawing.Point(101, 362);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 21);
             this.label3.TabIndex = 4;
@@ -163,20 +166,21 @@
             this.tEposta.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tEposta.ForeColor = System.Drawing.Color.Black;
             this.tEposta.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tEposta.Location = new System.Drawing.Point(150, 344);
+            this.tEposta.Location = new System.Drawing.Point(184, 400);
             this.tEposta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tEposta.MaxLength = 50;
             this.tEposta.Name = "tEposta";
             this.tEposta.PlaceholderText = "";
             this.tEposta.SelectedText = "";
             this.tEposta.Size = new System.Drawing.Size(273, 27);
-            this.tEposta.TabIndex = 7;
+            this.tEposta.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(67, 347);
+            this.label4.Location = new System.Drawing.Point(101, 403);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 21);
             this.label4.TabIndex = 6;
@@ -195,21 +199,22 @@
             this.tAdres.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tAdres.ForeColor = System.Drawing.Color.Black;
             this.tAdres.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tAdres.Location = new System.Drawing.Point(150, 384);
+            this.tAdres.Location = new System.Drawing.Point(184, 440);
             this.tAdres.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tAdres.MaxLength = 500;
             this.tAdres.Multiline = true;
             this.tAdres.Name = "tAdres";
             this.tAdres.PlaceholderText = "";
             this.tAdres.SelectedText = "";
             this.tAdres.Size = new System.Drawing.Size(273, 108);
-            this.tAdres.TabIndex = 8;
+            this.tAdres.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(81, 386);
+            this.label5.Location = new System.Drawing.Point(115, 442);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 21);
             this.label5.TabIndex = 8;
@@ -226,10 +231,10 @@
             this.bSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.bSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bSave.ForeColor = System.Drawing.Color.White;
-            this.bSave.Location = new System.Drawing.Point(150, 503);
+            this.bSave.Location = new System.Drawing.Point(184, 559);
             this.bSave.Name = "bSave";
             this.bSave.Size = new System.Drawing.Size(132, 35);
-            this.bSave.TabIndex = 9;
+            this.bSave.TabIndex = 10;
             this.bSave.Text = "Kaydet";
             this.bSave.Click += new System.EventHandler(this.bSave_Click);
             // 
@@ -244,10 +249,10 @@
             this.bCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.bCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bCancel.ForeColor = System.Drawing.Color.White;
-            this.bCancel.Location = new System.Drawing.Point(288, 503);
+            this.bCancel.Location = new System.Drawing.Point(322, 559);
             this.bCancel.Name = "bCancel";
             this.bCancel.Size = new System.Drawing.Size(135, 35);
-            this.bCancel.TabIndex = 10;
+            this.bCancel.TabIndex = 11;
             this.bCancel.Text = "İptal";
             this.bCancel.Click += new System.EventHandler(this.bCancel_Click);
             // 
@@ -265,15 +270,15 @@
             this.DtDogumTarihi.BorderRadius = 15;
             this.DtDogumTarihi.Checked = true;
             this.DtDogumTarihi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.DtDogumTarihi.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DtDogumTarihi.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtDogumTarihi.ForeColor = System.Drawing.Color.White;
             this.DtDogumTarihi.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DtDogumTarihi.Location = new System.Drawing.Point(156, 76);
+            this.DtDogumTarihi.Location = new System.Drawing.Point(193, 123);
             this.DtDogumTarihi.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DtDogumTarihi.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DtDogumTarihi.Name = "DtDogumTarihi";
             this.DtDogumTarihi.Size = new System.Drawing.Size(267, 36);
-            this.DtDogumTarihi.TabIndex = 1;
+            this.DtDogumTarihi.TabIndex = 2;
             this.DtDogumTarihi.Value = new System.DateTime(2025, 7, 31, 0, 10, 41, 907);
             // 
             // label10
@@ -281,7 +286,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(34, 83);
+            this.label10.Location = new System.Drawing.Point(71, 130);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(118, 21);
             this.label10.TabIndex = 37;
@@ -292,15 +297,15 @@
             this.DtTarih.BorderRadius = 15;
             this.DtTarih.Checked = true;
             this.DtTarih.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.DtTarih.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.DtTarih.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtTarih.ForeColor = System.Drawing.Color.White;
             this.DtTarih.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DtTarih.Location = new System.Drawing.Point(153, 120);
+            this.DtTarih.Location = new System.Drawing.Point(190, 167);
             this.DtTarih.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DtTarih.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.DtTarih.Name = "DtTarih";
             this.DtTarih.Size = new System.Drawing.Size(267, 36);
-            this.DtTarih.TabIndex = 2;
+            this.DtTarih.TabIndex = 3;
             this.DtTarih.Value = new System.DateTime(2025, 7, 31, 0, 10, 41, 907);
             // 
             // label9
@@ -308,11 +313,11 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(52, 127);
+            this.label9.Location = new System.Drawing.Point(32, 174);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(95, 21);
+            this.label9.Size = new System.Drawing.Size(152, 21);
             this.label9.TabIndex = 36;
-            this.label9.Text = "Giriş Tarihi:";
+            this.label9.Text = "Ehliyet Giriş Tarihi:";
             // 
             // tLisansNumarasi
             // 
@@ -327,9 +332,9 @@
             this.tLisansNumarasi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tLisansNumarasi.ForeColor = System.Drawing.Color.Black;
             this.tLisansNumarasi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tLisansNumarasi.Location = new System.Drawing.Point(153, 42);
+            this.tLisansNumarasi.Location = new System.Drawing.Point(187, 40);
             this.tLisansNumarasi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tLisansNumarasi.MaxLength = 9;
+            this.tLisansNumarasi.MaxLength = 20;
             this.tLisansNumarasi.Name = "tLisansNumarasi";
             this.tLisansNumarasi.PlaceholderText = "";
             this.tLisansNumarasi.SelectedText = "";
@@ -341,7 +346,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(14, 43);
+            this.label8.Location = new System.Drawing.Point(48, 41);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(138, 21);
             this.label8.TabIndex = 35;
@@ -360,24 +365,133 @@
             this.tSoyad.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tSoyad.ForeColor = System.Drawing.Color.Black;
             this.tSoyad.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tSoyad.Location = new System.Drawing.Point(150, 265);
+            this.tSoyad.Location = new System.Drawing.Point(184, 321);
             this.tSoyad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tSoyad.MaxLength = 30;
             this.tSoyad.Name = "tSoyad";
             this.tSoyad.PlaceholderText = "";
             this.tSoyad.SelectedText = "";
             this.tSoyad.Size = new System.Drawing.Size(273, 27);
-            this.tSoyad.TabIndex = 5;
+            this.tSoyad.TabIndex = 6;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(80, 271);
+            this.label6.Location = new System.Drawing.Point(114, 327);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 21);
             this.label6.TabIndex = 39;
             this.label6.Text = "Soyad:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(21, 80);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(165, 21);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "Ehliyetin Verildiği İl:";
+            // 
+            // cmbIl
+            // 
+            this.cmbIl.AutoRoundedCorners = true;
+            this.cmbIl.BackColor = System.Drawing.Color.Transparent;
+            this.cmbIl.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbIl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbIl.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbIl.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbIl.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbIl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbIl.ItemHeight = 20;
+            this.cmbIl.Items.AddRange(new object[] {
+            "Adıyaman",
+            "Afyonkarahisar",
+            "Ağrı",
+            "Amasya",
+            "Ankara",
+            "Antalya",
+            "Artvin",
+            "Aydın",
+            "Balıkesir",
+            "Bilecik",
+            "Bingöl",
+            "Bitlis",
+            "Bolu",
+            "Burdur",
+            "Bursa",
+            "Çanakkale",
+            "Çankırı",
+            "Çorum",
+            "Denizli",
+            "Diyarbakır",
+            "Edirne",
+            "Elazığ",
+            "Erzincan",
+            "Erzurum",
+            "Eskişehir",
+            "Gaziantep",
+            "Giresun",
+            "Gümüşhane",
+            "Hakkâri",
+            "Hatay",
+            "Isparta",
+            "Mersin",
+            "İstanbul",
+            "İzmir",
+            "Kars",
+            "Kastamonu",
+            "Kayseri",
+            "Kırklareli",
+            "Kırşehir",
+            "Kocaeli",
+            "Konya",
+            "Kütahya",
+            "Malatya",
+            "Manisa",
+            "Kahramanmaraş",
+            "Mardin",
+            "Muğla",
+            "Muş",
+            "Nevşehir",
+            "Niğde",
+            "Ordu",
+            "Rize",
+            "Sakarya",
+            "Samsun",
+            "Siirt",
+            "Sinop",
+            "Sivas",
+            "Tekirdağ",
+            "Tokat",
+            "Trabzon",
+            "Tunceli",
+            "Şanlıurfa",
+            "Uşak",
+            "Van",
+            "Yozgat",
+            "Zonguldak",
+            "Aksaray",
+            "Bayburt",
+            "Karaman",
+            "Kırıkkale",
+            "Batman",
+            "Şırnak",
+            "Bartın",
+            "Ardahan",
+            "Iğdır",
+            "Yalova",
+            "Karabük",
+            "Kilis",
+            "Osmaniye",
+            "Düzce"});
+            this.cmbIl.Location = new System.Drawing.Point(187, 80);
+            this.cmbIl.Name = "cmbIl";
+            this.cmbIl.Size = new System.Drawing.Size(270, 26);
+            this.cmbIl.TabIndex = 1;
             // 
             // FrmCustomerAdd
             // 
@@ -386,7 +500,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.ClientSize = new System.Drawing.Size(488, 562);
+            this.ClientSize = new System.Drawing.Size(486, 621);
+            this.Controls.Add(this.cmbIl);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.tSoyad);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.DtDogumTarihi);
@@ -411,7 +527,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(502, 660);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(502, 660);
             this.Name = "FrmCustomerAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Müşteri Ekle";
@@ -444,5 +562,7 @@
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2TextBox tSoyad;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbIl;
     }
 }

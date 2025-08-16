@@ -38,46 +38,47 @@
             this.bListCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.bAddCustomer = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cartesianChart2 = new LiveCharts.WinForms.CartesianChart();
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
             this.lBitmisSozelesme = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.lSozlesme = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.lMusteriSayisi = new System.Windows.Forms.Label();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lArabaSayisi = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
-            this.cartesianChart2 = new LiveCharts.WinForms.CartesianChart();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lArabaSayisi = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
+            this.guna2Panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.guna2Panel4.SuspendLayout();
+            this.guna2Panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.guna2Panel3.SuspendLayout();
+            this.guna2Panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.guna2Panel6.SuspendLayout();
-            this.guna2Panel7.SuspendLayout();
-            this.guna2Panel8.SuspendLayout();
-            this.guna2Panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -276,6 +277,7 @@
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.cartesianChart2);
             this.guna2Panel1.Controls.Add(this.cartesianChart1);
@@ -288,6 +290,24 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1183, 516);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(307, 169);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 25);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Gelir";
+            // 
+            // cartesianChart2
+            // 
+            this.cartesianChart2.Location = new System.Drawing.Point(595, 197);
+            this.cartesianChart2.Name = "cartesianChart2";
+            this.cartesianChart2.Size = new System.Drawing.Size(507, 300);
+            this.cartesianChart2.TabIndex = 7;
+            this.cartesianChart2.Text = "cartesianChart2";
             // 
             // cartesianChart1
             // 
@@ -307,6 +327,14 @@
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(245, 124);
             this.guna2Panel5.TabIndex = 3;
+            // 
+            // guna2Panel9
+            // 
+            this.guna2Panel9.Controls.Add(this.lBitmisSozelesme);
+            this.guna2Panel9.Location = new System.Drawing.Point(26, 54);
+            this.guna2Panel9.Name = "guna2Panel9";
+            this.guna2Panel9.Size = new System.Drawing.Size(99, 45);
+            this.guna2Panel9.TabIndex = 10;
             // 
             // lBitmisSozelesme
             // 
@@ -350,6 +378,14 @@
             this.guna2Panel4.Size = new System.Drawing.Size(245, 124);
             this.guna2Panel4.TabIndex = 2;
             // 
+            // guna2Panel8
+            // 
+            this.guna2Panel8.Controls.Add(this.lSozlesme);
+            this.guna2Panel8.Location = new System.Drawing.Point(35, 54);
+            this.guna2Panel8.Name = "guna2Panel8";
+            this.guna2Panel8.Size = new System.Drawing.Size(99, 45);
+            this.guna2Panel8.TabIndex = 8;
+            // 
             // lSozlesme
             // 
             this.lSozlesme.AutoSize = true;
@@ -391,6 +427,14 @@
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(245, 124);
             this.guna2Panel3.TabIndex = 1;
+            // 
+            // guna2Panel7
+            // 
+            this.guna2Panel7.Controls.Add(this.lMusteriSayisi);
+            this.guna2Panel7.Location = new System.Drawing.Point(26, 54);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.Size = new System.Drawing.Size(99, 45);
+            this.guna2Panel7.TabIndex = 9;
             // 
             // lMusteriSayisi
             // 
@@ -434,16 +478,13 @@
             this.guna2Panel2.Size = new System.Drawing.Size(245, 124);
             this.guna2Panel2.TabIndex = 0;
             // 
-            // guna2PictureBox1
+            // guna2Panel6
             // 
-            this.guna2PictureBox1.Image = global::RentACar.Properties.Resources.car_2;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(153, 24);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(74, 69);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 4;
-            this.guna2PictureBox1.TabStop = false;
+            this.guna2Panel6.Controls.Add(this.lArabaSayisi);
+            this.guna2Panel6.Location = new System.Drawing.Point(23, 54);
+            this.guna2Panel6.Name = "guna2Panel6";
+            this.guna2Panel6.Size = new System.Drawing.Size(99, 45);
+            this.guna2Panel6.TabIndex = 6;
             // 
             // lArabaSayisi
             // 
@@ -455,6 +496,17 @@
             this.lArabaSayisi.TabIndex = 5;
             this.lArabaSayisi.Text = "0";
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::RentACar.Properties.Resources.car_2;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(153, 24);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(74, 69);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 4;
+            this.guna2PictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -465,55 +517,15 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Araba Sayısı";
             // 
-            // guna2Panel6
+            // label3
             // 
-            this.guna2Panel6.Controls.Add(this.lArabaSayisi);
-            this.guna2Panel6.Location = new System.Drawing.Point(23, 54);
-            this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.Size = new System.Drawing.Size(99, 45);
-            this.guna2Panel6.TabIndex = 6;
-            // 
-            // guna2Panel7
-            // 
-            this.guna2Panel7.Controls.Add(this.lMusteriSayisi);
-            this.guna2Panel7.Location = new System.Drawing.Point(26, 54);
-            this.guna2Panel7.Name = "guna2Panel7";
-            this.guna2Panel7.Size = new System.Drawing.Size(99, 45);
-            this.guna2Panel7.TabIndex = 9;
-            // 
-            // guna2Panel8
-            // 
-            this.guna2Panel8.Controls.Add(this.lSozlesme);
-            this.guna2Panel8.Location = new System.Drawing.Point(35, 54);
-            this.guna2Panel8.Name = "guna2Panel8";
-            this.guna2Panel8.Size = new System.Drawing.Size(99, 45);
-            this.guna2Panel8.TabIndex = 8;
-            // 
-            // guna2Panel9
-            // 
-            this.guna2Panel9.Controls.Add(this.lBitmisSozelesme);
-            this.guna2Panel9.Location = new System.Drawing.Point(26, 54);
-            this.guna2Panel9.Name = "guna2Panel9";
-            this.guna2Panel9.Size = new System.Drawing.Size(99, 45);
-            this.guna2Panel9.TabIndex = 10;
-            // 
-            // cartesianChart2
-            // 
-            this.cartesianChart2.Location = new System.Drawing.Point(595, 197);
-            this.cartesianChart2.Name = "cartesianChart2";
-            this.cartesianChart2.Size = new System.Drawing.Size(507, 300);
-            this.cartesianChart2.TabIndex = 7;
-            this.cartesianChart2.Text = "cartesianChart2";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(287, 169);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 25);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Gelir";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(786, 169);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(148, 25);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Sözleşme Sayısı";
             // 
             // FrmMain
             // 
@@ -541,24 +553,24 @@
             this.guna2Panel1.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
             this.guna2Panel5.PerformLayout();
+            this.guna2Panel9.ResumeLayout(false);
+            this.guna2Panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
+            this.guna2Panel8.ResumeLayout(false);
+            this.guna2Panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
+            this.guna2Panel7.ResumeLayout(false);
+            this.guna2Panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.guna2Panel6.ResumeLayout(false);
             this.guna2Panel6.PerformLayout();
-            this.guna2Panel7.ResumeLayout(false);
-            this.guna2Panel7.PerformLayout();
-            this.guna2Panel8.ResumeLayout(false);
-            this.guna2Panel8.PerformLayout();
-            this.guna2Panel9.ResumeLayout(false);
-            this.guna2Panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -597,6 +609,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private System.Windows.Forms.Label label2;
         private LiveCharts.WinForms.CartesianChart cartesianChart2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

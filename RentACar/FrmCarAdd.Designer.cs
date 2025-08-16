@@ -1,6 +1,6 @@
 ﻿namespace RentACar
 {
-    partial class FrmVehicleRegistration
+    partial class FrmCarAdd
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVehicleRegistration));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCarAdd));
             this.tPlaka = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbMarka = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -65,6 +65,7 @@
             this.tPlaka.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tPlaka.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tPlaka.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tPlaka.ForeColor = System.Drawing.Color.Black;
             this.tPlaka.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tPlaka.Location = new System.Drawing.Point(139, 38);
             this.tPlaka.MaxLength = 11;
@@ -94,7 +95,7 @@
             this.cmbMarka.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbMarka.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbMarka.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbMarka.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbMarka.ForeColor = System.Drawing.Color.Black;
             this.cmbMarka.ItemHeight = 20;
             this.cmbMarka.Items.AddRange(new object[] {
             "Opel",
@@ -118,7 +119,7 @@
             this.cmbSeri.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbSeri.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbSeri.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbSeri.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbSeri.ForeColor = System.Drawing.Color.Black;
             this.cmbSeri.ItemHeight = 20;
             this.cmbSeri.Location = new System.Drawing.Point(139, 115);
             this.cmbSeri.Name = "cmbSeri";
@@ -180,6 +181,7 @@
             this.tModel.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tModel.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tModel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tModel.ForeColor = System.Drawing.Color.Black;
             this.tModel.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tModel.Location = new System.Drawing.Point(139, 153);
             this.tModel.MaxLength = 11;
@@ -200,6 +202,7 @@
             this.tRenk.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tRenk.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tRenk.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tRenk.ForeColor = System.Drawing.Color.Black;
             this.tRenk.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tRenk.Location = new System.Drawing.Point(139, 190);
             this.tRenk.MaxLength = 11;
@@ -220,6 +223,7 @@
             this.tKm.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tKm.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tKm.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tKm.ForeColor = System.Drawing.Color.Black;
             this.tKm.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tKm.Location = new System.Drawing.Point(139, 228);
             this.tKm.MaxLength = 11;
@@ -325,7 +329,7 @@
             this.cmbYakit.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbYakit.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbYakit.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbYakit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbYakit.ForeColor = System.Drawing.Color.Black;
             this.cmbYakit.ItemHeight = 20;
             this.cmbYakit.Items.AddRange(new object[] {
             "Benzin",
@@ -348,9 +352,11 @@
             this.tGunlukUcret.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tGunlukUcret.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tGunlukUcret.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tGunlukUcret.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tGunlukUcret.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold);
+            this.tGunlukUcret.ForeColor = System.Drawing.Color.Black;
             this.tGunlukUcret.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tGunlukUcret.Location = new System.Drawing.Point(139, 342);
+            this.tGunlukUcret.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tGunlukUcret.MaxLength = 11;
             this.tGunlukUcret.Name = "tGunlukUcret";
             this.tGunlukUcret.PlaceholderText = "";
@@ -393,19 +399,19 @@
             this.cSansizman.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cSansizman.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cSansizman.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cSansizman.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cSansizman.ForeColor = System.Drawing.Color.Black;
             this.cSansizman.ItemHeight = 20;
             this.cSansizman.Items.AddRange(new object[] {
-            "Manuel Şanzıman (Düz Vites)",
-            "Otomatik Şanzıman",
-            "Yarı Otomatik Şanzıman",
-            "Elektrikli Araç Şanzımanı"});
+            "Manuel",
+            "Otomatik",
+            "Yarı Otomatik",
+            "Elektrikli"});
             this.cSansizman.Location = new System.Drawing.Point(139, 305);
             this.cSansizman.Name = "cSansizman";
             this.cSansizman.Size = new System.Drawing.Size(215, 26);
             this.cSansizman.TabIndex = 7;
             // 
-            // FrmVehicleRegistration
+            // FrmCarAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -435,12 +441,12 @@
             this.Controls.Add(this.tPlaka);
             this.Controls.Add(this.label6);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(675, 491);
-            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(675, 491);
-            this.Name = "FrmVehicleRegistration";
+            this.Name = "FrmCarAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Araba Kayıt Sayfası";
             this.Load += new System.EventHandler(this.FrmVehicleRegistration_Load);

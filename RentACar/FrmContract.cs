@@ -19,7 +19,7 @@ namespace RentACar
         {
             InitializeComponent();
         }
-        MainFunctions mainfunction = new MainFunctions();
+        ClsMainFunctions mainfunction = new ClsMainFunctions();
         ClsControlHelper cHelper = new ClsControlHelper();
         ClsConnection con = new ClsConnection();
 
@@ -57,16 +57,7 @@ namespace RentACar
             cHelper.DatagridFormatter(gridContract);
         }
 
-        private void txtTC_TextChanged(object sender, EventArgs e)
-        {
-            //if (txtTC.Text == "") foreach (Control item in splitContainer2.Panel1.Controls) if (item is Guna2TextBox) item.Text = "";
-            //if (txtTC.TextLength == 11)
-            //{
-            //    string qry = "select * from Tblmusteri WHERE tc = '" + txtTC.Text + "'";
-            //    mainfunction.TC_ara(txtTC, txtAdSoyad, txtTelefon, qry);
-            //}
-
-        }
+    
         private double BringCarPrice(string _plaka)
         {
             SqlCommand cmd = new SqlCommand("SELECT GunlukUcret FROM TblArac WHERE Plaka = @pla", con.Connection());
@@ -265,7 +256,7 @@ namespace RentACar
             }
 
         }
-        string plaka;
+        string plaka="";
         private void gridCustomer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = gridContract.CurrentRow;
@@ -390,7 +381,7 @@ namespace RentACar
                 {
                     string tc = txtTC.Text.Trim();
 
-                    string qry = "SELECT * FROM TblMusteri";
+                    string qry = "SELECT TC FROM TblMusteri";
                     SqlCommand cmd = new SqlCommand();
 
 

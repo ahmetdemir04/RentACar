@@ -16,13 +16,19 @@ using System.Windows.Forms;
 
 namespace RentACar
 {
-    public partial class FrmVehicleRegistration : Form
+    public partial class FrmCarAdd : Form
     {
-        public FrmVehicleRegistration()
+        public FrmCarAdd()
         {
             InitializeComponent();
+
+            tGunlukUcret.KeyPress += cHelper.OnlyNumeric;
+            tKm.KeyPress += cHelper.OnlyNumeric;
+
+            tRenk.KeyPress += cHelper.OnlyAlphabetic;
+
         }
-        MainFunctions mainFunctions = new MainFunctions();
+        ClsMainFunctions mainfunction = new ClsMainFunctions();
         ClsControlHelper cHelper = new ClsControlHelper();
 
         string DefaultCarPicture = Path.Combine(Application.StartupPath, @"default_car.png");
@@ -37,6 +43,7 @@ namespace RentACar
             PictureBox1.Image = Image.FromFile(image);
         }
         string source = "";
+        bool isImageChanged = false;
         private void bAddPicture_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -46,23 +53,31 @@ namespace RentACar
             {
                 source = ofd.FileName;
                 PictureBox1.ImageLocation = ofd.FileName;
+                isImageChanged = true;
             }
 
         }
         void AddImage(string _imgPath)
         {
-            string AllImagesPath = Path.Combine(Application.StartupPath, @"Images");
-
-            if (!Directory.Exists(AllImagesPath))
+            if (isImageChanged)
             {
-                Directory.CreateDirectory(AllImagesPath);
+                string ImgPath = Path.Combine(Application.StartupPath, _imgPath);
+                string ImgDir = Path.GetDirectoryName(ImgPath);
+
+
+                if (!Directory.Exists(ImgDir))
+                {
+                    Directory.CreateDirectory(ImgDir);
+                }
+
+                File.Copy(source, ImgPath, true);
+
+                PictureBox1.Image = Image.FromFile(ImgPath);
+
+                source = string.Empty;
+
             }
 
-            File.Copy(source, Path.Combine(AllImagesPath, tPlaka.Text + ".png"));
-
-            PictureBox1.Image = Image.FromFile(_imgPath);
-
-            source = string.Empty;
 
         }
 
@@ -87,11 +102,7 @@ namespace RentACar
             }
 
         }
-        private void bCancel_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-        MainFunctions mainfunction = new MainFunctions();
+
         private void cmbMarka_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -103,7 +114,7 @@ namespace RentACar
 
                 if (int.TryParse(cmbMarka.SelectedValue?.ToString(), out int markaId))
                 {
-                    mainFunctions.BringModel(cmbSeri, markaId);
+                    mainfunction.BringModel(cmbSeri, markaId);
                 }
             }
             catch (Exception)
@@ -117,12 +128,18 @@ namespace RentACar
         {
 
             SqlCommand cmd = new SqlCommand();
-            string qry = "SELECT * FROM TblArac";
-            if (mainfunction.IsThereAny(cmd, qry, tPlaka.Text))
+            string qry = "SELECT Plaka FROM TblArac";
+            if (!mainfunction.IsThereAny(cmd, qry, tPlaka.Text))
             {
                 if (!FieldCheck())
                 {
                     cHelper.Gmessagebox("Lütfen tüm alanları doldurun!", "Rent A Car", "Warning").Show();
+                    return;
+                }
+
+                int Yil = Convert.ToInt32(tModel.Text);
+                if (mainfunction.YearCheck(Yil))
+                {
                     return;
                 }
 
@@ -170,10 +187,19 @@ namespace RentACar
 
         private void tGunlukUcret_Leave(object sender, EventArgs e)
         {
-            if (decimal.TryParse(tGunlukUcret.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal value))
+            if (tGunlukUcret.Text == "")
             {
-                tGunlukUcret.Text = string.Format(CultureInfo.GetCultureInfo("tr-TR"), "{0:C2}", value);
+                tGunlukUcret.Text = "0";
             }
+            else
+            {
+                if (decimal.TryParse(tGunlukUcret.Text, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal value))
+                {
+                    tGunlukUcret.Text = string.Format(CultureInfo.GetCultureInfo("tr-TR"), "{0:C2}", value);
+                    g_value = value;
+                }
+            }
+
         }
         decimal? g_value = 0;
         private void tGunlukUcret_Enter(object sender, EventArgs e)
@@ -195,5 +221,11 @@ namespace RentACar
                 }
             }
         }
+        private void bCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+    
     }
 }

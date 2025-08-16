@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,7 +19,7 @@ namespace RentACar
         {
             InitializeComponent();
         }
-        MainFunctions mainfunction = new MainFunctions();
+        ClsMainFunctions mainfunction = new ClsMainFunctions();
         ClsControlHelper Chelper = new ClsControlHelper();
         private void FrmCustomerList_Load(object sender, EventArgs e)
         {
@@ -59,6 +60,11 @@ namespace RentACar
             }
 
         }
+        private void ClearSerach(object sender, EventArgs e)
+        {
+            tSearch.Text = string.Empty;
+            tSearch.Focus();
+        }
         private void ListCustomer()
         {
             gridCustomer.DataSource = null;
@@ -77,15 +83,20 @@ namespace RentACar
 
         private void tSearch_TextChanged(object sender, EventArgs e)
         {
-            string qry_customer = "Select * FROM TBLMUSTERI WHERE ad LIKE '%" + tSearch.Text + "%' and durumu = 1";
+            string qry_customer = string.Empty;
             SqlDataAdapter adtr = new SqlDataAdapter();
+            if (rdAdSoyad.Checked == true)
+            {
+              qry_customer = "Select * FROM TBLMUSTERI WHERE (AD + Soyad) LIKE '%" + tSearch.Text + "%' and durumu = 1";
+            }
+            else if (rdTC.Checked == true)
+            {
+                qry_customer = "Select * FROM TBLMUSTERI WHERE TC LIKE '%" + tSearch.Text + "%' and durumu = 1";
+            }
+            gridCustomer.DataSource = mainfunction.Listele(adtr, qry_customer);
 
             Chelper.DatagridFormatter(gridCustomer);
-
             gridCustomer.Columns["Durumu"].Visible = false;
-
-
-            gridCustomer.DataSource = mainfunction.Listele(adtr, qry_customer);
         }
 
         private void gridCustomer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -101,11 +112,21 @@ namespace RentACar
             tLisansNumarasi.Text = satir.Cells["LisansNumarasi"].Value.ToString();
             DtDogumTarihi.Value = DateTime.Parse(satir.Cells["DogumTarihi"].Value.ToString());
             DtTarih.Value = DateTime.Parse(satir.Cells["EhliyetinVerildigiTarih"].Value.ToString());
+            bool durumu = Convert.ToBoolean(satir.Cells["Durumu"].Value.ToString());
+
+            if (durumu)
+            {
+                ChcDurumu.Checked = true;
+            }
+            else
+            {
+                ChcDurumu.Checked = false;
+            }
         }
 
         private void bUpdate_Click(object sender, EventArgs e)
         {
-            if (!CheckAllFields())
+            if (CheckAllFields())
             {
                 int? id = Convert.ToInt32(gridCustomer.CurrentRow.Cells["MusteriID"].Value);
                 if (id != null)
@@ -122,6 +143,7 @@ namespace RentACar
                     cmd_update_customer.Parameters.AddWithValue("@DT", DateTime.Parse(DtDogumTarihi.Text));
                     cmd_update_customer.Parameters.AddWithValue("@VT", DateTime.Parse(DtTarih.Text));
                     cmd_update_customer.Parameters.AddWithValue("@ID", id);
+                    cmd_update_customer.Parameters.AddWithValue("@Durumu", ChcDurumu.CheckState);
 
                     bool worked = mainfunction.DML(cmd_update_customer, qry_update_customer);
 
@@ -131,6 +153,7 @@ namespace RentACar
                     ListCustomer();
 
                     Chelper.ClearFields(splitContainer1.Panel1);
+                    ChcDurumu.Checked = false;
                     tLisansNumarasi.Focus();
                 }
                 else
@@ -171,5 +194,6 @@ namespace RentACar
             ClearFields();
         }
 
+       
     }
 }

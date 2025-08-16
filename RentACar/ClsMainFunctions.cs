@@ -13,9 +13,10 @@ using System.Windows.Forms;
 
 namespace RentACar
 {
-    public class MainFunctions
+    public class ClsMainFunctions
     {
         ClsConnection con = new ClsConnection();
+        ClsControlHelper cHelper = new ClsControlHelper();
         DataTable table;
         public string DefaultCarPicture = Path.Combine(Application.StartupPath, @"default_car.png");
 
@@ -112,16 +113,15 @@ namespace RentACar
 
                 while (dr.Read())
                 {
-                    if (dr.Read().ToString() == _searchedValue)
-                        return false;
+                    if (dr[0].ToString() == _searchedValue)
+                        return true;
                 }
 
-                return true;
+                return false;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
-                return false;
+                throw ex;
             }
         }
         public List<string> Dashboard()
@@ -162,9 +162,6 @@ namespace RentACar
                 throw;
             }
 
-
-
-
         }
         public void Bos_Araclar(ComboBox _cmb, string _qry)
         {
@@ -186,93 +183,17 @@ namespace RentACar
             }
             finally { con.Connection().Close(); }
         }
-        public void TC_ara(Guna2TextBox _txtTC, Guna2TextBox _txtAdsoyad, Guna2TextBox _txtTelefon, string _qry)
+        public bool YearCheck(int _GirilenYil)
         {
-            try
+            if (DateTime.Now.Year < _GirilenYil)
             {
-                con.Connection();
-                SqlConnection connection = new SqlConnection(con.StrConnection);
-
-                SqlCommand cmd = new SqlCommand(_qry, connection);
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    _txtAdsoyad.Text = reader["adsoyad"].ToString();
-                    _txtTelefon.Text = reader["telefon"].ToString();
-                }
-
-
+                return true;
             }
-            catch (Exception)
+            else
             {
-                throw;
+                cHelper.Gmessagebox("Girmiş olduğunuz model içinde bulunduğumuz yıldan büyük olamaz!", "Rent A Car", "Warning").Show();
+                return false;
             }
-            finally { con.Connection().Close(); }
-        }
-
-        public void CombodanGetir(Guna2ComboBox _araclar, Guna2TextBox _marka, Guna2TextBox _seri, Guna2TextBox _model, Guna2TextBox _renk, string _qry)
-        {
-            try
-            {
-                con.Connection();
-                SqlConnection connection = new SqlConnection(con.StrConnection);
-
-                SqlCommand cmd = new SqlCommand(_qry, connection);
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    _marka.Text = reader["marka"].ToString();
-                    _seri.Text = reader["seri"].ToString();
-                    _model.Text = reader["yil"].ToString();
-                    _renk.Text = reader["renk"].ToString();
-                }
-
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally { con.Connection().Close(); }
-        }
-
-        public void Ucret_Hesapla(Guna2ComboBox _kirasekli, Guna2TextBox ucret, string _qry)
-        {
-            try
-            {
-                con.Connection();
-                SqlConnection connection = new SqlConnection(con.StrConnection);
-
-                SqlCommand cmd = new SqlCommand(_qry, connection);
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    if (_kirasekli.SelectedIndex == 0) ucret.Text = (int.Parse(reader["kiraucreti"].ToString()) * 1).ToString();
-                    if (_kirasekli.SelectedIndex == 1) ucret.Text = (int.Parse(reader["kiraucreti"].ToString()) * 0.80).ToString();
-                    if (_kirasekli.SelectedIndex == 2) ucret.Text = (int.Parse(reader["kiraucreti"].ToString()) * 0.70).ToString();
-
-                }
-
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally { con.Connection().Close(); }
-        }
-
-        public void SatisHesapla(Label lbl)
-        {
-            con.Connection();
-            SqlConnection connection = new SqlConnection(con.StrConnection);
-
-            SqlCommand command = new SqlCommand("SELECT SUM(tutar) FROM TblSatis", connection);
-            lbl.Text = "Toplam Tutar= " + command.ExecuteScalar().ToString() + " TL";
-            connection.Close();
         }
     }
 }

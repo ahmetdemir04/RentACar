@@ -18,7 +18,7 @@ namespace RentACar
         {
             InitializeComponent();
         }
-        MainFunctions main = new MainFunctions();
+        ClsMainFunctions main = new ClsMainFunctions();
         ClsControlHelper cHelper = new ClsControlHelper();
         private void ShortCarList_Load(object sender, EventArgs e)
         {

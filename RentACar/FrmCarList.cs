@@ -23,8 +23,14 @@ namespace RentACar
         public FrmCarList()
         {
             InitializeComponent();
+
+            tKiraUcreti.KeyPress += cHelper.OnlyNumeric;
+            tKm.KeyPress += cHelper.OnlyNumeric;
+
+            tRenk.KeyPress += cHelper.OnlyAlphabetic;
+
         }
-        MainFunctions mainFunctions = new MainFunctions();
+        ClsMainFunctions mainFunctions = new ClsMainFunctions();
         ClsControlHelper cHelper = new ClsControlHelper();
         private void FrmCarList_Load(object sender, EventArgs e)
         {
@@ -150,6 +156,13 @@ namespace RentACar
         {
             id = Convert.ToInt32(gridCars.CurrentRow.Cells["ArabaID"].Value);
 
+            int Yil = Convert.ToInt32(tModel.Text);
+            if (mainFunctions.YearCheck(Yil))
+            {
+                return;
+            }
+
+
             if (CheckAllFields())
             {
                 string query_upd_car = "UPDATE TblArac SET Plaka= @plaka, marka=@marka, model=@model, yil=@yil,renk=@renk,Sansizman=@sanziman, YakitTipi=@YakitTipi, km=@km,GunlukUcret=@gunlukucret,durum=@durum,resim=@resim WHERE ArabaID=@id";
@@ -182,7 +195,7 @@ namespace RentACar
                     cHelper.Gmessagebox("Güncelleme işlemi başarıyla gerçekleştirildi!", "Rent A Car", "Information").Show();
 
                 ListCars();
-                cHelper.ClearFields(this);
+                cHelper.ClearFields(splitContainer1.Panel1);
                 id = null;
             }
         }
@@ -222,6 +235,10 @@ namespace RentACar
                 ListCars();
 
                 cHelper.ClearFields(this);
+                cmbYakit.SelectedIndex = -1;
+                CmbSanziman.SelectedIndex = -1;
+                cmbMarka.SelectedIndex = -1;
+                cmbSeri.SelectedIndex = -1;
                 pcboxCar.Image = null;
             }
 
@@ -245,7 +262,7 @@ namespace RentACar
 
         private void tKiraUcreti_MouseEnter(object sender, EventArgs e)
         {
-            if (tKiraUcreti.Text == "")
+            if (tKiraUcreti.Text == "0" || tKiraUcreti.Text == "0,00")
             {
                 tKiraUcreti.Text = string.Empty;
             }
