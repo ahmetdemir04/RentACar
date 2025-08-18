@@ -16,6 +16,8 @@ Bu proje, Windows Forms tabanlı bir araç kiralama otomasyonudur. Araç ekleme 
 6. Seçtikten sonra açık olan tüm panelerde okay, okay diyerek database kurunuz. <br>
 7. Bu sınıf içerisindeki Constring (bağlantı dizesi) alanını, kendi veritabanınızın bağlantı yoluna göre güncelleyiniz. <br>
 
+<br> <br>
+
 <p> Belirtilen adımları eksiksiz uyguladığınız takdirde proje sorunsuz bir şekilde çalışacaktır.</p>
 
 ## Dasboard Sayfası
